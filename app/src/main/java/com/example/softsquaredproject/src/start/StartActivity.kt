@@ -13,6 +13,7 @@ import com.example.softsquaredproject.databinding.ActivityStartBinding
 import com.example.softsquaredproject.src.home.HomeActivity
 import com.example.softsquaredproject.src.main.MainActivity
 import com.example.softsquaredproject.src.mybaemin.MybaeminActivity
+import com.example.softsquaredproject.src.search_address.SearchadActivity
 
 class StartActivity : BaseActivity<ActivityStartBinding>(ActivityStartBinding::inflate,TransitionMode.HORIZON) {
 
@@ -25,6 +26,9 @@ class StartActivity : BaseActivity<ActivityStartBinding>(ActivityStartBinding::i
             }
             binding.startBarImage2.setOnClickListener(){
                 startActivity(Intent(this, MybaeminActivity::class.java))
+            }
+            binding.startBarLinear.setOnClickListener(){
+                startActivity(Intent(this, SearchadActivity::class.java))
             }
     }
 }

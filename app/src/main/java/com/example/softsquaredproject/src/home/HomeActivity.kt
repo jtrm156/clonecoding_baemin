@@ -12,6 +12,7 @@ import com.example.softsquaredproject.R
 import com.example.softsquaredproject.config.BaseActivity
 import com.example.softsquaredproject.databinding.ActivityHomeBinding
 import com.example.softsquaredproject.src.mybaemin.MybaeminActivity
+import com.example.softsquaredproject.src.search_address.SearchadActivity
 import com.example.softsquaredproject.src.start.StartActivity
 
 data class Foodcategory(val img : Int, val category_name : String)
@@ -66,6 +67,9 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(ActivityHomeBinding::infl
 
         binding.homeBarBack.setOnClickListener(){
             onBackPressed()
+        }
+        binding.homeBarLinear.setOnClickListener(){
+            startActivity(Intent(this, SearchadActivity::class.java))
         }
         binding.btmNavSearch.setOnClickListener(){
             startActivity(Intent(this, StartActivity::class.java))

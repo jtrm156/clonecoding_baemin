@@ -6,6 +6,7 @@ import com.example.softsquaredproject.R
 import com.example.softsquaredproject.config.BaseActivity
 import com.example.softsquaredproject.databinding.ActivityMybaeminBinding
 import com.example.softsquaredproject.src.home.HomeActivity
+import com.example.softsquaredproject.src.login.LoginActivity
 import com.example.softsquaredproject.src.start.StartActivity
 
 
@@ -16,6 +17,10 @@ class MybaeminActivity : BaseActivity<ActivityMybaeminBinding>(ActivityMybaeminB
 
         binding.mybaeminBarBack.setOnClickListener(){
             finish()
+        }
+
+        binding.mybaeminLogin.setOnClickListener(){
+            startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 }

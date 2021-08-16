@@ -57,6 +57,7 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <LinearLayout
+            android:id="@+id/start_bar_linear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -69,7 +70,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="13dp"
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:text="경기 용인시 기흥구 보정..."
@@ -197,7 +198,7 @@
                         android:layout_weight="1.4"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:src="@drawable/baemin_icon4"
+                        android:src="@drawable/baemin_icon2"
                         android:scaleType="fitXY"/>
                 </LinearLayout>
 
@@ -206,13 +207,14 @@
                     android:layout_height="0dp"
                     android:layout_weight="0.5"
                     android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
                     >
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/baemin_icon5"
-                        />
+                        android:src="@drawable/baemin_icon1"
+                        android:scaleType="fitXY"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -220,7 +222,8 @@
                     android:layout_height="0dp"
                     android:layout_weight="0.5"
                     android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:weightSum="3"
+                    android:layout_marginTop="10dp">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_weight="1.4"
@@ -237,7 +240,22 @@
                         android:layout_weight="1.4"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:src="@drawable/baemin_icon7"
+                        android:src="@drawable/baemin_icon8"
+                        android:scaleType="fitXY"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/baemin_icon9"
                         android:scaleType="fitXY"/>
                 </LinearLayout>
             </LinearLayout>
