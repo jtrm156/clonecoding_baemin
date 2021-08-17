@@ -36,5 +36,4 @@ class HomeService(val view: HomeFragmentView) {
             }
         })
     }
-
 }

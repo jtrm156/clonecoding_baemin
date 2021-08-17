@@ -6,8 +6,8 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.softsquaredproject.R
 
-class ViewPagerAdapter(bannerlist: ArrayList<Int>) : RecyclerView.Adapter<ViewPagerAdapter.PagerViewHolder>() {
-    var item = bannerlist
+class ViewPagerAdapter2(bannerlist2: ArrayList<Int>) : RecyclerView.Adapter<ViewPagerAdapter2.PagerViewHolder>() {
+    var item = bannerlist2
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -15,7 +15,7 @@ class ViewPagerAdapter(bannerlist: ArrayList<Int>) : RecyclerView.Adapter<ViewPa
     ) = PagerViewHolder((parent))
 
     override fun onBindViewHolder(holder: PagerViewHolder, position: Int) {
-        holder.idol.setImageResource(item[position%4])
+        holder.idol.setImageResource(item[position%8])
     }
 
     override fun getItemCount(): Int = Int.MAX_VALUE
@@ -23,6 +23,6 @@ class ViewPagerAdapter(bannerlist: ArrayList<Int>) : RecyclerView.Adapter<ViewPa
     inner class PagerViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder
         (LayoutInflater.from(parent.context).inflate(R.layout.banner_list_item, parent, false)){
 
-        val idol = itemView.findViewById<AppCompatImageView>(R.id.baemin_banner)
+        val idol = itemView.findViewById<AppCompatImageView>(R.id.baemin_banner2)
     }
 }

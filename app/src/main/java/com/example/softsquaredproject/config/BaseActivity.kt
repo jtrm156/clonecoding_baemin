@@ -43,7 +43,7 @@ abstract class BaseActivity<B : ViewBinding>(private val inflate: (LayoutInflate
         super.onBackPressed()
         if (isFinishing) {
             when (transitionMode) {
-                TransitionMode.HORIZON -> overridePendingTransition(R.anim.none,R.anim.slide_in_left)
+                TransitionMode.HORIZON -> overridePendingTransition(R.anim.none, R.anim.slide_in_right)
                 //TransitionMode.VERTICAL -> overridePendingTransition(R.anim.none, R.anim.vertical_exit)
                 else -> Unit
             }

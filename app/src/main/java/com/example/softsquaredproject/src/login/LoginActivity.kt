@@ -14,5 +14,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         binding.loginSignup.setOnClickListener(){
             startActivity(Intent(this, SignupActivity::class.java))
         }
+        binding.loginBarBack.setOnClickListener(){
+            onBackPressed()
+        }
     }
 }
