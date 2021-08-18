@@ -6,7 +6,6 @@ import android.os.Handler
 import android.os.Looper
 import com.example.softsquaredproject.config.BaseActivity
 import com.example.softsquaredproject.databinding.ActivitySplashBinding
-import com.example.softsquaredproject.src.main.MainActivity
 import com.example.softsquaredproject.src.start.StartActivity
 
 class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {

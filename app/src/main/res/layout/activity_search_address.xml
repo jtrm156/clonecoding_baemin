@@ -82,7 +82,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="8.5"
-                        android:background="@drawable/adressbackground">
+                        android:background="@drawable/adress_background">
 
                         <androidx.appcompat.widget.AppCompatEditText
                             android:layout_width="match_parent"

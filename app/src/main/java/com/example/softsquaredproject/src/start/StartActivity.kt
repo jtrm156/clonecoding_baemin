@@ -20,7 +20,6 @@ import com.example.softsquaredproject.config.BaseActivity
 import com.example.softsquaredproject.databinding.ActivityStartBinding
 import com.example.softsquaredproject.src.home.HomeActivity
 import com.example.softsquaredproject.src.home.ViewPagerAdapter
-import com.example.softsquaredproject.src.main.MainActivity
 import com.example.softsquaredproject.src.mybaemin.MybaeminActivity
 import com.example.softsquaredproject.src.search_address.SearchadActivity
 
