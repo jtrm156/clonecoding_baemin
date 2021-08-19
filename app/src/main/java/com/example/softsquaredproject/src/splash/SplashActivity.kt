@@ -8,7 +8,7 @@ import com.example.softsquaredproject.config.BaseActivity
 import com.example.softsquaredproject.databinding.ActivitySplashBinding
 import com.example.softsquaredproject.src.start.StartActivity
 
-class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
+class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate, TransitionMode.HORIZON) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

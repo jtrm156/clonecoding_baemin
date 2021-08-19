@@ -22,5 +22,9 @@
     <string name="my_page_tv_counter">%1d 번 눌렀습니다.</string>
     <string name="my_page_btn_counting_number">숫자 세기</string>
 
+    <string name="kakao_app_key">b57a79244d2796e14bc66d2e21d7aa61</string>
+    <string name="kakao_scheme">kakaob57a79244d2796e14bc66d2e21d7aa61</string>
 
+    <string name="naver_app_key">v6BqYg48tI5xAdvfRU9wiXtphDzza3RTFWsBuP7U</string>
+    <string name="naver_client_id">dnpo0dr7bf</string>
 </resources>

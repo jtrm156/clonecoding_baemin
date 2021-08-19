@@ -64,6 +64,7 @@
         android:layout_height="wrap_content"
         android:hint="  아이디 또는 이메일"
         android:textColorHint="@color/blackForText"
+        android:textCursorDrawable="@drawable/text_cursor"
         app:layout_constraintLeft_toRightOf="@id/gd_left"
         app:layout_constraintRight_toLeftOf="@id/gd_right"
         app:layout_constraintBottom_toTopOf="@id/login_text3"
@@ -75,7 +76,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toRightOf="@id/gd_left"
         app:layout_constraintBottom_toTopOf="@+id/login_edt_txt2"
-
         android:visibility="gone"
         android:text="이메일 아이디 또는 아이디를 입력해주세요."
         android:textColor="@color/redForText"/>
@@ -85,7 +85,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="  비밀번호"
+        android:inputType="numberPassword"
         android:textColorHint="@color/blackForText"
+        android:textCursorDrawable="@drawable/text_cursor"
         app:layout_constraintLeft_toRightOf="@id/gd_left"
         app:layout_constraintRight_toLeftOf="@id/gd_right"
         app:layout_constraintBottom_toTopOf="@id/login_text4"

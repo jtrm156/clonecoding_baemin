@@ -18,10 +18,18 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://naver.jfrog.io/artifactory/maven/' }
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-
+subprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'https://naver.jfrog.io/artifactory/maven/' }
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
+    }
+}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

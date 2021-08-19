@@ -12,6 +12,7 @@
     <color name="colorAccent">#889dfe</color>
     <color name="whiteForBackground">#FFFFFF</color>
     <color name="blackForText">#878787</color>
+    <color name="strokeForView">#E0E0E0</color>
     <color name="redForText">#BF6364</color>
     <color name="baemincolor">#2AC1BC</color>
     <color name="baeminbackgroundColor">#F6F6F6</color>
