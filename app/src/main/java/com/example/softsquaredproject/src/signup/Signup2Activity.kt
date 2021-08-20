@@ -32,6 +32,10 @@ class Signup2Activity : BaseActivity<ActivitySignup2Binding>(ActivitySignup2Bind
                 val password = binding.signup2EdtTxt3.text.toString()
                 val birthDay = binding.signup2EdtTxt4.text.toString()
 
+                val preferencesEditor: SharedPreferences.Editor = sSharedPreferences.edit()
+                preferencesEditor.putString("nickNm", nickNm)
+                preferencesEditor.apply()
+
                 val postSignUpRequest = PostSignUpRequest(
                     phoneNum = phoneNum,
                     email = email,
@@ -169,6 +173,7 @@ class Signup2Activity : BaseActivity<ActivitySignup2Binding>(ActivitySignup2Bind
         if(response.isSuccess){
             startActivity(Intent(this, LoginActivity::class.java))
             showCustomToast("회원가입되었습니다.")
+            finish()
         }
     }
 

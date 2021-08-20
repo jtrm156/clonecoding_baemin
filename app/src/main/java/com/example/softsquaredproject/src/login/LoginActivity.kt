@@ -1,10 +1,12 @@
 package com.example.softsquaredproject.src.login
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.example.softsquaredproject.config.ApplicationClass
 import com.example.softsquaredproject.config.BaseActivity
 import com.example.softsquaredproject.databinding.ActivityLoginBinding
 import com.example.softsquaredproject.src.login.models.LoginResponse
@@ -14,6 +16,7 @@ import com.example.softsquaredproject.src.signup.SignupActivity
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
+import com.kakao.sdk.user.UserApiClient
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate,TransitionMode.HORIZON), LoginActivityView{
 
@@ -88,6 +91,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         if(response.isSuccess){
             startActivity(Intent(this, MybaeminActivity::class.java))
             showCustomToast("로그인되었습니다.")
+            val preferencesEditor: SharedPreferences.Editor = ApplicationClass.sSharedPreferences.edit()
+            preferencesEditor.putString("jwt", response.result.jwt)
+            preferencesEditor.apply()
         }
         else if(response.isSuccess == false){
             binding.loginText3.visibility = View.VISIBLE
@@ -97,5 +103,25 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
 
     override fun onPostLoginFailure(message: String) {
 
+    }
+
+    override fun onDestroy(){
+        super.onDestroy()
+
+        UserApiClient.instance.logout { error ->
+            if (error != null) {
+                Toast.makeText(this, "로그아웃 실패 $error", Toast.LENGTH_SHORT).show()
+            }else {
+                Toast.makeText(this, "로그아웃 성공", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        UserApiClient.instance.unlink { error ->
+            if (error != null) {
+                Toast.makeText(this, "회원탈퇴 실패 $error", Toast.LENGTH_SHORT).show()
+            }else {
+                Toast.makeText(this, "회원탈퇴 성공", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
