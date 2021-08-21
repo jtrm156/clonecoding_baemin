@@ -1,0 +1,14 @@
+package com.example.softsquaredproject.src.home
+
+import android.os.Bundle
+import android.view.View
+import com.example.softsquaredproject.R
+import com.example.softsquaredproject.config.BaseFragment
+import com.example.softsquaredproject.databinding.FragmentGiftBinding
+
+class GiftFragment : BaseFragment<FragmentGiftBinding>(FragmentGiftBinding::bind, R.layout.fragment_gift){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
+}

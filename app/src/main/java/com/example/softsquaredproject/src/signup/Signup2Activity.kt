@@ -21,6 +21,7 @@ class Signup2Activity : BaseActivity<ActivitySignup2Binding>(ActivitySignup2Bind
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.none)
 
         binding.signup2Finish.setOnClickListener(){
             val finish : Boolean = sSharedPreferences.getBoolean("emailcheck",false)
@@ -178,5 +179,11 @@ class Signup2Activity : BaseActivity<ActivitySignup2Binding>(ActivitySignup2Bind
     }
 
     override fun onPostSignUpFailure(message: String) {
+    }
+
+    override fun finish(){
+        super.finish()
+
+        overridePendingTransition(R.anim.none, R.anim.slide_out_right)
     }
 }

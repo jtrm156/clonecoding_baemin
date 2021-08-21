@@ -27,6 +27,9 @@ class SearchadActivity : BaseActivity<ActivitySearchAddressBinding>(ActivitySear
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        binding.searchBarBack.setOnClickListener(){
+            finish()
+        }
         binding.searchCurrentLocation.setOnClickListener(){
             val permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
             if(permissionCheck == PackageManager.PERMISSION_GRANTED) {

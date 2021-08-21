@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.example.softsquaredproject.R
 import com.example.softsquaredproject.config.ApplicationClass
 import com.example.softsquaredproject.config.BaseActivity
 import com.example.softsquaredproject.databinding.ActivityLoginBinding
@@ -22,6 +23,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.none)
 
         binding.loginSignup.setOnClickListener(){
             startActivity(Intent(this, SignupActivity::class.java))
@@ -123,5 +125,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
                 Toast.makeText(this, "회원탈퇴 성공", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    override fun finish(){
+        super.finish()
+
+        overridePendingTransition(R.anim.none, R.anim.slide_out_right)
     }
 }

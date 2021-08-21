@@ -40,74 +40,73 @@
         android:id="@+id/start_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/baemincolor"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/start_bar_image1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             android:src="@drawable/baemin_bar_icon1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/start_bar_linear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="15dp"
             android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/start_bar_image2"
             app:layout_constraintStart_toEndOf="@id/start_bar_image1"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal"
-            >
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/start_address"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:textSize="13dp"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:text="경기 용인시 기흥구 보정..."
-                android:maxLines="1"
                 android:ellipsize="end"
-                android:textStyle="bold"/>
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="주소를 설정해주세요"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:src="@drawable/icon_down"
-                />
+                android:src="@drawable/icon_down" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginTop="15dp"
             android:src="@drawable/baemin_bar_icon2"
-            app:layout_constraintRight_toLeftOf="@id/start_bar_image2"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintRight_toLeftOf="@id/start_bar_image2"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/start_bar_image2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:src="@drawable/baemin_bar_icon3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -195,7 +194,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7">
+                    android:layout_weight="0.6">
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"

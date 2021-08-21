@@ -18,6 +18,8 @@ class MybaeminActivity : BaseActivity<ActivityMybaeminBinding>(ActivityMybaeminB
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        overridePendingTransition(R.anim.slide_in_right, R.anim.none)
+
         binding.mybaeminBarBack.setOnClickListener(){
             finish()
         }
@@ -33,5 +35,11 @@ class MybaeminActivity : BaseActivity<ActivityMybaeminBinding>(ActivityMybaeminB
             binding.mybaeminText1.setText(nickNm)
         }
 
+    }
+
+    override fun finish(){
+        super.finish()
+
+        overridePendingTransition(R.anim.none, R.anim.slide_out_right)
     }
 }

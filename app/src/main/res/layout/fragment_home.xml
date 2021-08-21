@@ -7,11 +7,11 @@
     android:background="@color/baeminbackgroundColor">
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/order_tab_layout"
+        android:id="@+id/home_tab_layout"
         android:layout_width="match_parent"
-        android:background="@drawable/layout_background"
         android:layout_height="wrap_content"
-        app:tabIndicatorColor="@color/black"
+        android:background="@color/white"
+        app:tabIndicatorColor="@color/baemincolor"
         app:tabIndicatorHeight="4dp"
         app:tabGravity="fill"
         app:tabMode="scrollable"
@@ -20,10 +20,10 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/order_pager"
+        android:id="@+id/home_pager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/order_tab_layout"
+        app:layout_constraintTop_toBottomOf="@id/home_tab_layout"
         app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

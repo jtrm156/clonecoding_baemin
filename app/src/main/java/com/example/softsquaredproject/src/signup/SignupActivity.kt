@@ -20,6 +20,8 @@ class SignupActivity : BaseActivity<ActivitySignupBinding>(ActivitySignupBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        overridePendingTransition(R.anim.slide_in_right, R.anim.none)
+
         binding.signupEdtTxt1.addTextChangedListener((object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 //
@@ -124,5 +126,11 @@ class SignupActivity : BaseActivity<ActivitySignupBinding>(ActivitySignupBinding
 
     override fun onPostPhoneSendFailure(message: String) {
 
+    }
+
+    override fun finish(){
+        super.finish()
+
+        overridePendingTransition(R.anim.none, R.anim.slide_out_right)
     }
 }

@@ -204,7 +204,7 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
                     val n1 = response.results[i].land.number1
 
                     val address = a2+a3+n1
-                    //binding.mapTxt2.text = "${a2} ${a3} ${n1}"
+                    binding.mapTxt2.text = "${a2} ${a3} ${n1}"
                     val preferencesEditor: SharedPreferences.Editor = sSharedPreferences.edit()
                     preferencesEditor.putString("code", code)
                     preferencesEditor.putString("address", address)

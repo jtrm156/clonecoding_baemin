@@ -8,10 +8,11 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/baemin_banner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="135dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/baemin_banner1"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
