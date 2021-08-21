@@ -1,13 +1,21 @@
 package com.example.softsquaredproject.src.home
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.softsquaredproject.R
+import com.example.softsquaredproject.databinding.ActivityRestaurantListBinding
 import com.example.softsquaredproject.databinding.FoodcategoryListLtemBinding
+import com.example.softsquaredproject.src.map.MapActivity
+import com.example.softsquaredproject.src.order.OrderFragment
+import com.example.softsquaredproject.src.order.RestaurantListActivity
+import com.example.softsquaredproject.src.start.StartActivity
 
 class CustomAdapter(private val context: Context, var FoodcategoryArrayList: MutableList<Foodcategory>) :
     RecyclerView.Adapter<CustomAdapter.ItemViewHolder>() {
@@ -15,7 +23,6 @@ class CustomAdapter(private val context: Context, var FoodcategoryArrayList: Mut
 
     interface ItemClickListener {
         fun onClick(view: View, position: Int)
-        fun onLongClick(view: View, position: Int)
     }
     private lateinit var itemClickListener: ItemClickListener
 
@@ -48,6 +55,8 @@ class CustomAdapter(private val context: Context, var FoodcategoryArrayList: Mut
 
         holder.itemView.setOnClickListener {
             itemClickListener.onClick(it, position)
+            val intent = Intent(holder.itemView?.context, RestaurantListActivity::class.java)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
     } //layout의 view와 데이터를 연결
 

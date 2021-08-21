@@ -1,14 +1,17 @@
 package com.example.softsquaredproject.src.home
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
+import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.softsquaredproject.R
+import com.example.softsquaredproject.config.ApplicationClass
 import com.example.softsquaredproject.config.BaseActivity
 import com.example.softsquaredproject.databinding.ActivityHomeBinding
 import com.example.softsquaredproject.src.mybaemin.MybaeminActivity
@@ -64,6 +67,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(ActivityHomeBinding::infl
         binding.homeFoodcategory.layoutManager = layout2
         binding.homeFoodcategory.setHasFixedSize(true)
 
+
+        customAdapter.setItemClickListener(object : CustomAdapter.ItemClickListener{
+            override fun onClick(view: View, position: Int) {
+                val item = FoodcategoryList[position]
+            }
+        })
 
         binding.homeBarBack.setOnClickListener(){
             onBackPressed()

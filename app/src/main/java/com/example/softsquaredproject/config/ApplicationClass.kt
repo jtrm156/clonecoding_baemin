@@ -1,7 +1,9 @@
 package com.example.softsquaredproject.config
 
+import android.app.Activity
 import android.app.Application
 import android.content.SharedPreferences
+import android.view.Window
 import com.kakao.sdk.common.KakaoSdk
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -40,6 +42,7 @@ class ApplicationClass : Application() {
         initRetrofitInstance()
         initRetrofitInstance2()
         KakaoSdk.init(this, "b57a79244d2796e14bc66d2e21d7aa61")
+
     }
 
     // 레트로핏 인스턴스를 생성하고, 레트로핏에 각종 설정값들을 지정해줍니다.

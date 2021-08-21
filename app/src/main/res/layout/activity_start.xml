@@ -43,7 +43,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/baemincolor">
+        android:background="@color/baemincolor"
+        >
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/start_bar_image1"
@@ -65,21 +66,27 @@
             android:gravity="center"
             app:layout_constraintEnd_toStartOf="@id/start_bar_image2"
             app:layout_constraintStart_toEndOf="@id/start_bar_image1"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            >
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/start_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13dp"
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:text="경기 용인시 기흥구 보정..."
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textStyle="bold"/>
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:src="@drawable/icon_down"/>
+                android:src="@drawable/icon_down"
+                />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -179,7 +186,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:weightSum="7.5"
+                android:weightSum="7.4"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:background="@drawable/layout_background"
@@ -327,7 +334,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="45dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:paddingLeft="12dp"

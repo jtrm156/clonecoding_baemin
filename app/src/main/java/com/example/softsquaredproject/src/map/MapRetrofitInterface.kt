@@ -1,6 +1,7 @@
 package com.example.softsquaredproject.src.map
 
 import com.example.softsquaredproject.src.map.models.MapResponse
+import com.example.softsquaredproject.src.map.models2.MapResponse2
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -15,4 +16,10 @@ interface MapRetrofitInterface {
         @Query("output") output: String,
         @Query("orders") orders: String,
     ) : Call<MapResponse>
+
+    @GET("map-geocode/v2/geocode")
+    @Headers("X-NCP-APIGW-API-KEY-ID:dnpo0dr7bf","X-NCP-APIGW-API-KEY:v6BqYg48tI5xAdvfRU9wiXtphDzza3RTFWsBuP7U")
+    fun gettrans_ad(
+        @Query("query") query: String
+    ) : Call<MapResponse2>
 }

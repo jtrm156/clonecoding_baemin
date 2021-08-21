@@ -2,6 +2,7 @@ package com.example.softsquaredproject.src.start
 
 import android.app.ActivityOptions
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -16,8 +17,10 @@ import android.view.animation.Transformation
 import androidx.core.widget.NestedScrollView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.softsquaredproject.R
+import com.example.softsquaredproject.config.ApplicationClass.Companion.sSharedPreferences
 import com.example.softsquaredproject.config.BaseActivity
 import com.example.softsquaredproject.databinding.ActivityStartBinding
+import com.example.softsquaredproject.src.home.CustomAdapter
 import com.example.softsquaredproject.src.home.HomeActivity
 import com.example.softsquaredproject.src.home.ViewPagerAdapter
 import com.example.softsquaredproject.src.mybaemin.MybaeminActivity
@@ -39,6 +42,11 @@ class StartActivity : BaseActivity<ActivityStartBinding>(ActivityStartBinding::i
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+
+        val address = sSharedPreferences.getString("jibun_address",null)
+        val address2 = sSharedPreferences.getString("final_address",null)
+
+        binding.startAddress.text = "${address},${address2}"
 
         binding.startDelivery.setOnClickListener() {
             startActivity(Intent(this, HomeActivity::class.java))
@@ -64,6 +72,7 @@ class StartActivity : BaseActivity<ActivityStartBinding>(ActivityStartBinding::i
             }
         }
     }
+
     fun changePageNumber(){
         binding.startViewpager.apply {
             registerOnPageChangeCallback(object: ViewPager2.OnPageChangeCallback(){
