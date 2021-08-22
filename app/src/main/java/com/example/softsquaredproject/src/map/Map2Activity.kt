@@ -26,7 +26,7 @@ class Map2Activity : BaseActivity<ActivityMap2Binding>(ActivityMap2Binding::infl
         val y = sSharedPreferences.getString("cLongitude",null)!!.toDouble()
 
         val road_ad = sSharedPreferences.getString("road_address",null)!!.toString()
-        val jibun_ad = sSharedPreferences.getString("jibun_address",null)!!.toString()
+        val jibun_ad = sSharedPreferences.getString("address",null)!!.toString()
         binding.map2Txt1.text = jibun_ad
         binding.map2Txt3.text = road_ad
 

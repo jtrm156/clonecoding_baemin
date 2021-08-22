@@ -16,7 +16,7 @@ class LoadingDialog(context: Context) : Dialog(context) {
         setContentView(binding.root)
         setCanceledOnTouchOutside(false)
         setCancelable(false)
-        window!!.setBackgroundDrawable(ColorDrawable())
+        window!!.setBackgroundDrawable(ColorDrawable(android.graphics.Color.TRANSPARENT))
         window!!.setDimAmount(0.2f)
     }
 

@@ -18,9 +18,8 @@ import com.example.softsquaredproject.src.start.StartActivity
 class SignupActivity : BaseActivity<ActivitySignupBinding>(ActivitySignupBinding::inflate, TransitionMode.HORIZON), SignupActivityView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
         overridePendingTransition(R.anim.slide_in_right, R.anim.none)
+        super.onCreate(savedInstanceState)
 
         binding.signupEdtTxt1.addTextChangedListener((object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -89,7 +88,7 @@ class SignupActivity : BaseActivity<ActivitySignupBinding>(ActivitySignupBinding
         binding.signupGetNumber.setOnClickListener {
             val phoneNum = binding.signupEdtTxt1.text.toString()
             val postPhoneSendRequest = PostPhoneSendRequest(phoneNum = phoneNum)
-            showLoadingDialog(this!!)
+            progressON()
             SignupService(this).phonesend(postPhoneSendRequest)
             val preferencesEditor: SharedPreferences.Editor = sSharedPreferences.edit()
             preferencesEditor.putString("phoneNum", phoneNum)
@@ -99,7 +98,7 @@ class SignupActivity : BaseActivity<ActivitySignupBinding>(ActivitySignupBinding
         binding.signupTxt3.setOnClickListener{
             val phoneNum = binding.signupEdtTxt1.text.toString()
             val postPhoneSendRequest = PostPhoneSendRequest(phoneNum = phoneNum)
-            showLoadingDialog(this!!)
+            progressON()
             SignupService(this).phonesend(postPhoneSendRequest)
         }
         binding.signupNext.setOnClickListener(){
@@ -107,12 +106,13 @@ class SignupActivity : BaseActivity<ActivitySignupBinding>(ActivitySignupBinding
 
             if(certNum == sSharedPreferences.getString("certNum",null)){
                     startActivity(Intent(this, Signup2Activity::class.java))
+
             }
         }
     }
 
     override fun onPostPhoneSendSuccess(response: PhoneSendResponse) {
-        dismissLoadingDialog()
+        progressOFF()
         if(response.isSuccess) {
             binding.signupTxt2.visibility = View.VISIBLE
             binding.signupTxt3.visibility = View.VISIBLE

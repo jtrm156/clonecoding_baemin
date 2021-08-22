@@ -23,8 +23,9 @@ data class Foodcategory(val img : Int, val category_name : String)
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>(ActivityHomeBinding::inflate,TransitionMode.HORIZON) {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         overridePendingTransition(R.anim.slide_in_right, R.anim.none)
+        super.onCreate(savedInstanceState)
+
         val address = ApplicationClass.sSharedPreferences.getString("jibun_address", null)
         val address2 = ApplicationClass.sSharedPreferences.getString("final_address", null)
 

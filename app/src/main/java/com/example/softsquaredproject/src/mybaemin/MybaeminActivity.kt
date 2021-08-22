@@ -16,9 +16,8 @@ import com.example.softsquaredproject.src.start.StartActivity
 class MybaeminActivity : BaseActivity<ActivityMybaeminBinding>(ActivityMybaeminBinding::inflate,TransitionMode.HORIZON) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
         overridePendingTransition(R.anim.slide_in_right, R.anim.none)
+        super.onCreate(savedInstanceState)
 
         binding.mybaeminBarBack.setOnClickListener(){
             finish()

@@ -20,8 +20,8 @@ import com.example.softsquaredproject.src.signup.models.*
 class Signup2Activity : BaseActivity<ActivitySignup2Binding>(ActivitySignup2Binding::inflate, TransitionMode.HORIZON), Signup2ActivityView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         overridePendingTransition(R.anim.slide_in_right, R.anim.none)
+        super.onCreate(savedInstanceState)
 
         binding.signup2Finish.setOnClickListener(){
             val finish : Boolean = sSharedPreferences.getBoolean("emailcheck",false)
@@ -44,7 +44,7 @@ class Signup2Activity : BaseActivity<ActivitySignup2Binding>(ActivitySignup2Bind
                     nickNm = nickNm,
                     birthDay = birthDay
                 )
-                showLoadingDialog(this!!)
+                progressON()
                 Signup2Service(this).signup(postSignUpRequest)
             }
         }
@@ -55,7 +55,7 @@ class Signup2Activity : BaseActivity<ActivitySignup2Binding>(ActivitySignup2Bind
         binding.signup2EdtConstraint12.setOnClickListener(){
             val email = binding.signup2EdtTxt1.text.toString()
             val postEmailCheckRequest = PostEmailCheckRequest(email = email)
-            showLoadingDialog(this!!)
+            progressON()
             Signup2Service(this).emailcheck(postEmailCheckRequest)
         }
 
@@ -149,7 +149,7 @@ class Signup2Activity : BaseActivity<ActivitySignup2Binding>(ActivitySignup2Bind
     }
 
     override fun onPostEmailCheckSuccess(response: EmailCheckResponse) {
-        dismissLoadingDialog()
+        progressOFF()
         if(response.isSuccess) {
             binding.signup2EdtIcon2.setImageResource(R.drawable.icon_check)
             binding.signup2Txt2.visibility = View.VISIBLE
@@ -170,7 +170,7 @@ class Signup2Activity : BaseActivity<ActivitySignup2Binding>(ActivitySignup2Bind
     }
 
     override fun onPostSignUpSuccess(response: SignUpResponse) {
-        dismissLoadingDialog()
+        progressOFF()
         if(response.isSuccess){
             startActivity(Intent(this, LoginActivity::class.java))
             showCustomToast("회원가입되었습니다.")

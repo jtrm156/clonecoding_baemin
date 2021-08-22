@@ -22,8 +22,9 @@ import com.kakao.sdk.user.UserApiClient
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate,TransitionMode.HORIZON), LoginActivityView{
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         overridePendingTransition(R.anim.slide_in_right, R.anim.none)
+        super.onCreate(savedInstanceState)
+
 
         binding.loginSignup.setOnClickListener(){
             startActivity(Intent(this, SignupActivity::class.java))

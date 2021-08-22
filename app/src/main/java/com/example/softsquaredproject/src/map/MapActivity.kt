@@ -38,7 +38,7 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
 
         var xy = URLDecoder.decode("${y},${x}", "UTF-8")
         var orders = URLDecoder.decode("legalcode,addr,admcode,roadaddr", "UTF-8")
-
+        progressON()
         MapService(this).gettrans_xy(xy,"json",orders)
 
         val address2 = sSharedPreferences.getString("address", null).toString()
@@ -78,12 +78,16 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
         binding.mapTxt3.setOnClickListener(){
             if(j){
                 binding.mapTxt3.text = "도로명 주소로 보기"
+                val address2 = sSharedPreferences.getString("address", null).toString()
+                MapService(this).gettrans_ad(address2)
                 val address7 = sSharedPreferences.getString("road_address", null).toString()
                 binding.mapTxt2.text = "${address7}"
                 j = false
             }
             else{
                 binding.mapTxt3.text = "지번 주소로 보기"
+                val address2 = sSharedPreferences.getString("address", null).toString()
+                MapService(this).gettrans_ad(address2)
                 val address6 = sSharedPreferences.getString("jibun_address", null).toString()
                 binding.mapTxt2.text = "${address6}"
                 j = true
@@ -192,6 +196,7 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
     }
 
     override fun onGettrans_xySuccess(response: MapResponse) {
+        progressOFF()
         if(response.status.code == 0){
             val index = response.results.size - 1
 
@@ -202,9 +207,10 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
                     val a2 = response.results[i].region.area2.name
                     val a3 = response.results[i].region.area3.name
                     val n1 = response.results[i].land.number1
+                    val n2 = response.results[i].land.number2
 
-                    val address = a2+a3+n1
-                    binding.mapTxt2.text = "${a2} ${a3} ${n1}"
+                    val address = "${a2} ${a3} ${n1}-${n2}"
+                    binding.mapTxt2.text = "${a2} ${a3} ${n1}-${n2}"
                     val preferencesEditor: SharedPreferences.Editor = sSharedPreferences.edit()
                     preferencesEditor.putString("code", code)
                     preferencesEditor.putString("address", address)
@@ -218,10 +224,10 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
     }
 
     override fun onGettrans_adSuccess(response: MapResponse2) {
+        progressOFF()
         if(response.status == "OK"){
             val address2 = response.addresses[0].roadAddress
             val address3 = response.addresses[0].jibunAddress
-
             val preferencesEditor: SharedPreferences.Editor = sSharedPreferences.edit()
 
             preferencesEditor.putString("road_address", address2)
