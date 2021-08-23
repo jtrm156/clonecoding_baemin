@@ -110,7 +110,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
 
     override fun onDestroy(){
         super.onDestroy()
-
+        /*
         UserApiClient.instance.logout { error ->
             if (error != null) {
                 Toast.makeText(this, "로그아웃 실패 $error", Toast.LENGTH_SHORT).show()
@@ -126,6 +126,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
                 Toast.makeText(this, "회원탈퇴 성공", Toast.LENGTH_SHORT).show()
             }
         }
+        */
     }
 
     override fun finish(){

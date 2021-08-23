@@ -7,7 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.softsquaredproject.config.ApplicationClass.Companion.sSharedPreferences
 import com.example.softsquaredproject.databinding.RestaurantListItemBinding
+import com.example.softsquaredproject.src.detail_restaurant.DetailActivity
 import com.example.softsquaredproject.src.home.Foodcategory
 
 class CustomAdapter2(private val context: Context, var RestaurantArrayList: MutableList<restaurantList>) :
@@ -27,19 +30,24 @@ class CustomAdapter2(private val context: Context, var RestaurantArrayList: Muta
         RecyclerView.ViewHolder(binding.root) {
         fun bind(restaurantlist: restaurantList, num: Int, context: Context) {
 
+            /*
             val resourceId = context.resources.getIdentifier(
                 restaurantlist.img.toString(),
                 "drawable",
                 context.packageName
             )
-            binding.restaurantImage.setImageResource(resourceId)
+            */
+
+
+            //binding.restaurantImage.setImageResource(resourceId)
+            Glide.with(itemView).load(restaurantlist.restaurant_img).into(binding.restaurantImage)
             binding.restaurantName.text = restaurantlist.restaurant_name
             binding.restaurantStar.text = restaurantlist.restaurant_star
             binding.restaurantReviewCnt.text = restaurantlist.restaurant_reviewCnt
             binding.restaurantMenu.text = restaurantlist.restaurant_menu
             binding.restaurantDelivertime.text = restaurantlist.restaurant_delivertime
-            binding.restaurantDelivertip.text = restaurantlist.restaurant_delivertip
-            binding.restaurantOrderprice.text = restaurantlist.restaurant_orderprice
+            binding.restaurantDelivertip.text = "배달팁0원~${restaurantlist.restaurant_delivertip}원"
+            binding.restaurantOrderprice.text = "최소주문 ${restaurantlist.restaurant_orderprice}"
 
         }
 
@@ -55,7 +63,7 @@ class CustomAdapter2(private val context: Context, var RestaurantArrayList: Muta
 
         holder.itemView.setOnClickListener {
             itemClickListener.onClick(it, position)
-            val intent = Intent(holder.itemView?.context, RestaurantListActivity::class.java)
+            val intent = Intent(holder.itemView?.context, DetailActivity::class.java)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
     } //layout의 view와 데이터를 연결

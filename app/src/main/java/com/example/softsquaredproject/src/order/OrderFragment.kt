@@ -29,8 +29,8 @@ class OrderFragment : BaseFragment<FragmentOrderBinding>(FragmentOrderBinding::b
                 override fun createFragment(position: Int): Fragment {
                     return when (position) {
                         0 -> KoreanFragment()
-                        1 -> SnackbarFragment()
-                        2 -> cutletFragment()
+                        1 -> KoreanFragment()
+                        2 -> KoreanFragment()
                         else -> KoreanFragment()
                     }
                 }
