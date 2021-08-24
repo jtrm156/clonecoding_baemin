@@ -22,8 +22,8 @@ class BasketActivity : BaseActivity<ActivityShoppingBasketBinding>(ActivityShopp
             onBackPressed()
         }
 
-        basketList.add(basketlist("유린기[새콤달콤]","가격 : 17000원"))
-        basketList.add(basketlist("유린기[새콤달콤]","가격 : 17000원"))
+        basketList.add(basketlist("교촌허니콤보","가격 : 17000원"))
+        basketList.add(basketlist("교촌레드콤보","가격 : 17000원"))
         val customAdapter = CustomAdapter3(this, basketList)
         binding.basketRecyclerview.adapter = customAdapter
 

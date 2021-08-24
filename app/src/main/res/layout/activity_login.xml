@@ -85,7 +85,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="  비밀번호"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         android:textColorHint="@color/blackForText"
         android:textCursorDrawable="@drawable/text_cursor"
         app:layout_constraintLeft_toRightOf="@id/gd_left"

@@ -10,9 +10,8 @@ class RestaurantListActivity : BaseActivity<ActivityRestaurantListBinding>(
     ActivityRestaurantListBinding::inflate, TransitionMode.HORIZON) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
         overridePendingTransition(R.anim.slide_in_right, R.anim.none)
+        super.onCreate(savedInstanceState)
 
         binding.orderBack.setOnClickListener(){
             finish()

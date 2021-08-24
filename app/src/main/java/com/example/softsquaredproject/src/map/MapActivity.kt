@@ -77,7 +77,7 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
         }
         binding.mapTxt3.setOnClickListener(){
             if(j){
-                binding.mapTxt3.text = "도로명 주소로 보기"
+                binding.mapTxt3.text = "지번주소로 보기"
                 val address2 = sSharedPreferences.getString("address", null).toString()
                 MapService(this).gettrans_ad(address2)
                 val address7 = sSharedPreferences.getString("road_address", null).toString()
@@ -85,7 +85,7 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
                 j = false
             }
             else{
-                binding.mapTxt3.text = "지번 주소로 보기"
+                binding.mapTxt3.text = "도로명 주소로 보기"
                 val address2 = sSharedPreferences.getString("address", null).toString()
                 MapService(this).gettrans_ad(address2)
                 val address6 = sSharedPreferences.getString("jibun_address", null).toString()
@@ -210,7 +210,8 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
                     val n2 = response.results[i].land.number2
 
                     val address = "${a2} ${a3} ${n1}-${n2}"
-                    binding.mapTxt2.text = "${a2} ${a3} ${n1}-${n2}"
+                    binding.mapTxt2.text = "${a2} ${a3} ${n1} ${n2}"
+                    j = false
                     val preferencesEditor: SharedPreferences.Editor = sSharedPreferences.edit()
                     preferencesEditor.putString("code", code)
                     preferencesEditor.putString("address", address)

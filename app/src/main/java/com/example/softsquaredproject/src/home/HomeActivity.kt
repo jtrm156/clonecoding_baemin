@@ -26,6 +26,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(ActivityHomeBinding::infl
         overridePendingTransition(R.anim.slide_in_right, R.anim.none)
         super.onCreate(savedInstanceState)
 
+
         val address = ApplicationClass.sSharedPreferences.getString("jibun_address", null)
         val address2 = ApplicationClass.sSharedPreferences.getString("final_address", null)
 

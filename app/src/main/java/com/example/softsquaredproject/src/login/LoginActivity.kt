@@ -36,7 +36,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
             val email = binding.loginEdtTxt1.text.toString()
             val password = binding.loginEdtTxt2.text.toString()
             val postLoginRequest = PostLoginRequest(email = email, password = password)
-            showLoadingDialog(this!!)
+            progressON()
             LoginService(this).login(postLoginRequest)
         }
 
@@ -90,7 +90,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     }
 
     override fun onPostLoginSuccess(response: LoginResponse) {
-        dismissLoadingDialog()
+        progressOFF()
         if(response.isSuccess){
             startActivity(Intent(this, MybaeminActivity::class.java))
             showCustomToast("로그인되었습니다.")

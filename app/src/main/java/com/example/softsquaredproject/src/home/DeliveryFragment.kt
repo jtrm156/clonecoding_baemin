@@ -1,6 +1,7 @@
 package com.example.softsquaredproject.src.home
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
@@ -9,13 +10,16 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.softsquaredproject.R
+import com.example.softsquaredproject.config.ApplicationClass
+import com.example.softsquaredproject.config.ApplicationClass.Companion.sSharedPreferences
 import com.example.softsquaredproject.config.BaseFragment
 import com.example.softsquaredproject.databinding.FragmentDeliveryBinding
+import com.example.softsquaredproject.src.home.models.CategoryResponse
 import com.example.softsquaredproject.src.mybaemin.MybaeminActivity
 import com.example.softsquaredproject.src.search_address.SearchadActivity
 import com.example.softsquaredproject.src.start.StartActivity
 
-class DeliveryFragment : BaseFragment<FragmentDeliveryBinding>(FragmentDeliveryBinding::bind, R.layout.fragment_delivery){
+class DeliveryFragment : BaseFragment<FragmentDeliveryBinding>(FragmentDeliveryBinding::bind, R.layout.fragment_delivery), CategoryView{
 
     var FoodcategoryList = mutableListOf<Foodcategory>()
 
@@ -34,27 +38,31 @@ class DeliveryFragment : BaseFragment<FragmentDeliveryBinding>(FragmentDeliveryB
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon1, "1인분"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon2, "한식"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon3, "분식"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon4, "카페·디저트"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon5, "돈까스·회·일식"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon6, "치킨"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon7, "피자"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon8, "아시안·양식"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon9, "중국집"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon10, "족발·보쌈"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon11, "야식"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon12, "찜·탕"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon13, "도시락"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon14, "패스트푸드"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon15, "브랜드관"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon16, "맛집랭킹"))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon17, ""))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon17, ""))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon17, ""))
-        FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon17, ""))
+        progressON(context!!)
+        CategoryService(this).get_main_list()
 
+        for(i in 0..0) {
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon1, "${sSharedPreferences.getString("categoryNm${i}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon2, "${sSharedPreferences.getString("categoryNm${i+1}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon3, "${sSharedPreferences.getString("categoryNm${i+2}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon4, "${sSharedPreferences.getString("categoryNm${i+3}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon5, "${sSharedPreferences.getString("categoryNm${i+4}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon6, "${sSharedPreferences.getString("categoryNm${i+5}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon7, "${sSharedPreferences.getString("categoryNm${i+6}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon8, "${sSharedPreferences.getString("categoryNm${i+7}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon9, "${sSharedPreferences.getString("categoryNm${i+8}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon10, "${sSharedPreferences.getString("categoryNm${i+9}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon11, "${sSharedPreferences.getString("categoryNm${i+10}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon12, "${sSharedPreferences.getString("categoryNm${i+11}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon13, "${sSharedPreferences.getString("categoryNm${i+12}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon14, "${sSharedPreferences.getString("categoryNm${i+13}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon15, "${sSharedPreferences.getString("categoryNm${i+14}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon16, "${sSharedPreferences.getString("categoryNm${i+15}",null)}"))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon17, ""))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon17, ""))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon17, ""))
+            FoodcategoryList.add(Foodcategory(R.drawable.baemin_category_icon17, ""))
+        }
         val customAdapter = CustomAdapter(activity as HomeActivity, FoodcategoryList)
         binding.homeFoodcategory.adapter = customAdapter
 
@@ -126,5 +134,22 @@ class DeliveryFragment : BaseFragment<FragmentDeliveryBinding>(FragmentDeliveryB
     override fun onPause() {
         super.onPause()
         autoScrollStop()
+    }
+
+    override fun onGet_main_Success(response: CategoryResponse) {
+        progressOFF()
+        if(response.isSuccess){
+            val preferencesEditor: SharedPreferences.Editor = sSharedPreferences.edit()
+            val index = response.result.size - 1
+
+            for(i in 0 .. index){
+                preferencesEditor.putString("categoryNm${i}", response.result[i].categoryNm)
+                preferencesEditor.apply()
+            }
+        }
+    }
+
+    override fun onGet_main_Failure(message: String) {
+
     }
 }

@@ -28,12 +28,11 @@ class MybaeminActivity : BaseActivity<ActivityMybaeminBinding>(ActivityMybaeminB
         }
 
         val jwt = sSharedPreferences.getString("jwt",null)
-        val nickNm = sSharedPreferences.getString("nickNum",null)
+        val nickNm = sSharedPreferences.getString("nickNm",null)
 
         if(jwt != null){
-            binding.mybaeminText1.setText(nickNm)
+            binding.mybaeminText1.text = "귀하신 분 ${nickNm}"
         }
-
     }
 
     override fun finish(){

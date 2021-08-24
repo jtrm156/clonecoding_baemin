@@ -70,6 +70,9 @@ class KoreanFragment: BaseFragment<ActivityKoreanBinding>(ActivityKoreanBinding:
         customAdapter.setItemClickListener(object : CustomAdapter2.ItemClickListener{
             override fun onClick(view: View, position: Int) {
                 val item = RestaurantList[position]
+                val preferencesEditor: SharedPreferences.Editor = sSharedPreferences.edit()
+                preferencesEditor.putInt("storeId",position+1)
+                preferencesEditor.apply()
             }
         })
     }
@@ -94,7 +97,6 @@ class KoreanFragment: BaseFragment<ActivityKoreanBinding>(ActivityKoreanBinding:
                 val price = response.result[i].minOrderPrice
                 val tip = response.result[i].deliverTip
 
-                preferencesEditor.putInt("id${i}", id)
                 preferencesEditor.putString("url_img${i}", url_img)
                 preferencesEditor.putString("name${i}", name)
                 preferencesEditor.putString("star${i}", star)
