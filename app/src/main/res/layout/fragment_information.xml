@@ -6,202 +6,711 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/baeminbackgroundColor">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/info_constraint1"
-        android:layout_width="match_parent"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/layout_background"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/info_txt1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="가게 소개"
-            android:textSize="15dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/info_img1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/baemin_category_icon1"
-            app:layout_constraintTop_toBottomOf="@id/info_txt1"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/info_txt2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BBQ 용납점은~~~"
-            android:textSize="15dp"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/info_img1"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/info_constraint2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/layout_background"
-        app:layout_constraintTop_toBottomOf="@id/info_constraint1"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="10dp">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:descendantFocusability="blocksDescendants">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/info_txt3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="상호명"
-            android:textSize="15dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"/>
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:orientation="horizontal"
-            android:weightSum="10">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/info_constraint1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3.5"
-                android:orientation="vertical"
-                >
+                android:background="@drawable/layout_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/info_txt1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="최소주문금액"
+                    android:text="가게 소개"
                     android:textSize="15dp"
                     android:textColor="@color/black"
-                    android:layout_marginTop="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     android:layout_marginStart="15dp"
-                    />
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
+                    android:layout_marginTop="15dp"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/info_constraint1_img1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/info_txt1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintBottom_toTopOf="@id/info_txt2"
+                            android:layout_marginBottom="15dp"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/info_img1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/baemin_category_icon1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                />
+                            <!--
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="쿠킹스튜디오 형식의 오픈형 매장입니다."
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@id/info_img1"
+                                app:layout_constraintStart_toStartOf="@id/info_img1"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="15dp"/>
+                                -->
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/info_txt2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="BBQ 용납점은~~~"
+                            android:textSize="15dp"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toBottomOf="@id/info_constraint1_img1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginBottom="15dp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/info_constraint2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="결제방법"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="15dp"/>
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
+                    android:background="@drawable/layout_background"
+                    app:layout_constraintTop_toBottomOf="@id/info_constraint1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/info_txt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="영업정보"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/info_linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/info_txt3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3.5"
+                            android:orientation="vertical"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="상호명"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginStart="15dp"
+                                />
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="운영시간"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginStart="15dp"/>
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="휴무일"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginStart="15dp"/>
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="전화번호"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginStart="15dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="6.5"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/info_constraint2_txt1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="비비큐 송파풍납점"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="15dp"/>
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/info_constraint2_txt2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="매일 - 오전 11:30 ~ 오후 11:30"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="15dp"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="15dp">
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/info_constraint2_txt3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="연중무휴"
+                                    android:textSize="15dp"
+                                    android:textColor="@color/black"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="15dp"
+                                android:orientation="vertical">
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/info_constraint2_txt4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="050-88197-4319"
+                                    android:textSize="15dp"
+                                    android:textColor="@color/black"/>
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/info_constraint2_txt5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="050번은 배달의민족에서 제공하는 번호입니다."
+                                    android:textColor="@color/black"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="10"
+                        app:layout_constraintTop_toBottomOf="@id/info_linear"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3.5"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="배달지역"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginStart="15dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="6.5"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="15dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/info_constraint2_txt6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="풍납동,성내동,둔촌동,신청동,잠실4동,잠실6동"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginEnd="15dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/info_constraint3"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="배달시간"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="15dp"/>
+                    android:background="@drawable/layout_background"
+                    app:layout_constraintTop_toBottomOf="@id/info_constraint6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/info_txt4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가계 통계"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/info_txt4"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/info_linear2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:orientation="horizontal"
+                            android:weightSum="10">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3.5"
+                                android:orientation="vertical"
+                                >
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="최근 주문수"
+                                    android:textSize="15dp"
+                                    android:textColor="@color/black"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginStart="15dp"
+                                    />
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="전체 리뷰수"
+                                    android:textSize="15dp"
+                                    android:textColor="@color/black"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginStart="15dp"/>
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="찜"
+                                    android:textSize="15dp"
+                                    android:textColor="@color/black"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginStart="15dp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="6.5"
+                                android:orientation="vertical"
+                                android:layout_marginBottom="15dp">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/info_constraint3_txt1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="6,000+"
+                                    android:textSize="15dp"
+                                    android:textColor="@color/black"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="15dp"/>
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/info_constraint3_txt2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1,000+"
+                                    android:textSize="15dp"
+                                    android:textColor="@color/black"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginEnd="15dp"/>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginEnd="15dp">
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/info_constraint3_txt3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="1041"
+                                        android:textSize="15dp"
+                                        android:textColor="@color/black"/>
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/info_constraint4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background"
+                app:layout_constraintTop_toBottomOf="@id/info_constraint3"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp">
+
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/info_txt5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="배달팁"
                     android:textSize="15dp"
                     android:textColor="@color/black"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginStart="15dp"/>
-            </LinearLayout>
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6.5"
-                android:orientation="vertical">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/info_txt5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/delivery_txt1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10,000원"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="15dp"/>
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/delivery_txt2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="바로결제, 만나서결제"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="15dp"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="15dp">
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/delivery_txt3"
+                        android:id="@+id/info_constraint4_txt1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="42~57분 소요 예상"
+                        android:text="· 배달팁은 가게에서 책정한 금액입니다."
                         android:textSize="15dp"
-                        android:textColor="@color/black"/>
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/icon_help"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="3dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginEnd="15dp">
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/delivery_txt4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1,000원~"
-                        android:textSize="15dp"
-                        android:textColor="@color/black"/>
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/delivery_txt5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2,500원"
-                        android:textSize="15dp"
-                        android:textColor="@color/black"/>
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="자세히"
-                        android:textSize="11dp"
-                        android:paddingStart="5dp"
-                        android:paddingEnd="5dp"
-                        android:paddingTop="3dp"
-                        android:paddingBottom="3dp"
                         android:textColor="@color/black"
-                        android:background="@drawable/background_restaurant1"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="5dp"/>
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/info_constraint4_txt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="· 배민은 배달팁 결제만 대행할 뿐, 금액은 가게로 전달합니다. "
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/info_constraint4_txt1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="5dp"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/info_constraint4_txt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="기본 배달팁"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@id/info_constraint4_txt2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="15dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="10"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/info_constraint4_txt3"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/baeminbackgroundColor"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginEnd="15dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="6"
+                            android:background="@color/white"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginEnd="1dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="1dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="18000원이상"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@color/white"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginEnd="1dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="1dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2,000원"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/info_constraint5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background"
+                app:layout_constraintTop_toBottomOf="@id/info_constraint4"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/info_txt7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사업자정보"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/info_txt7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/info_linear3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3.5"
+                            android:orientation="vertical"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="대표자명"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginStart="15dp"
+                                />
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="상호명"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginStart="15dp"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="사업자등록번호"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginStart="15dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="6.5"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/info_constraint5_txt1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="우정희"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="15dp"/>
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/info_constraint5_txt2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="비비큐 송파풍납점"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="15dp"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="15dp">
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="15dp"
+                                android:orientation="vertical">
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/info_constraint5_txt4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="서울특별시 송파구 풍납동 393 101호(풍납동)"
+                                    android:textSize="15dp"
+                                    android:textColor="@color/black"/>
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/info_constraint5_txt5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="위 주소는 사업자 등록증에 표기된 정보입니다."
+                                    android:textColor="@color/black"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="10"
+                        app:layout_constraintTop_toBottomOf="@id/info_linear3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3.5"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="사업자등록번호"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginStart="15dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="6.5"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="15dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/info_constraint5_txt6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="239-23-01095"
+                                android:textSize="15dp"
+                                android:textColor="@color/black"
+                                android:layout_marginEnd="15dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/info_constraint6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background"
+                app:layout_constraintTop_toBottomOf="@id/info_constraint2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/info_txt6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="안내 및 혜택"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/info_txt6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="15dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/info_constraint6_txt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="양념치킨으로 변경시 1,000원 추가 - 매운양념"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

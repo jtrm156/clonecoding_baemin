@@ -45,7 +45,7 @@ class CustomAdapter3(private val context: Context, var RestaurantArrayList: Muta
             binding.menuListTxt2.text = menulist.menuNm
             binding.menuListTxt3.text = "${menulist.price}원"
             if(menulist.isReprsnMenu == "N") binding.menuListTxt4.visibility = View.GONE
-            Glide.with(itemView).load(menulist.menu_url_img).into(binding.menuListImg1)
+            Glide.with(itemView).load(menulist.menu_url_img).override(500,500).into(binding.menuListImg1)
         }
 
     } //ViewHolder는 클래스 내에 View를 저장하는 변수를 만들어 그 안에 데이터를 직접 연결시킬 수 있는 클래스, 디자인 패턴

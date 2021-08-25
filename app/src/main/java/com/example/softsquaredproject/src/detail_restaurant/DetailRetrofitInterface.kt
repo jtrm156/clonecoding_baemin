@@ -1,8 +1,6 @@
 package com.example.softsquaredproject.src.detail_restaurant
 
-import com.example.softsquaredproject.src.detail_restaurant.models.DetailResponse
-import com.example.softsquaredproject.src.detail_restaurant.models.InfoResponse
-import com.example.softsquaredproject.src.detail_restaurant.models.MenuResponse
+import com.example.softsquaredproject.src.detail_restaurant.models.*
 import com.example.softsquaredproject.src.order.models.restaurantlistResonse
 import retrofit2.Call
 import retrofit2.http.GET
@@ -25,4 +23,16 @@ interface DetailRetrofitInterface {
     fun get_menu_list(
         @Path("storeId") storeId: Int
     ) : Call<MenuResponse>
+
+    @GET("/app/stores/{storeId}/review")
+    fun get_review_info_list(
+        @Path("storeId") storeId: Int
+    ) : Call<ReviewInfoResponse>
+
+    @GET("/app/stores/{storeId}/reviews")
+    fun get_review_list(
+        @Path("storeId") storeId: Int,
+        @Query("pageIdx") pageIdx: Int,
+        @Query("sort") sort: Int
+    ) : Call<ReviewListResponse>
 }

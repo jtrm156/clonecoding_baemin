@@ -12,9 +12,7 @@ import com.example.softsquaredproject.config.ApplicationClass.Companion.sSharedP
 import com.example.softsquaredproject.config.BaseActivity
 import com.example.softsquaredproject.databinding.ActivityDetailRestaurantListBinding
 import com.example.softsquaredproject.src.basket.BasketActivity
-import com.example.softsquaredproject.src.detail_restaurant.models.DetailResponse
-import com.example.softsquaredproject.src.detail_restaurant.models.InfoResponse
-import com.example.softsquaredproject.src.detail_restaurant.models.MenuResponse
+import com.example.softsquaredproject.src.detail_restaurant.models.*
 import com.example.softsquaredproject.src.map.Map2Activity
 import com.google.android.material.tabs.TabLayout
 
@@ -111,6 +109,22 @@ class DetailActivity : BaseActivity<ActivityDetailRestaurantListBinding>(Activit
 
     override fun onGet_menu_Failure(message: String) {
 
+    }
+
+    override fun onGet_review_info_Success(response: ReviewInfoResponse) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onGet_review_info_Failure(message: String) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onGet_review_list_Success(response: ReviewListResponse) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onGet_review_list_Failure(message: String) {
+        TODO("Not yet implemented")
     }
 
     override fun finish(){

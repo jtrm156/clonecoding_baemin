@@ -3,6 +3,7 @@ package com.example.softsquaredproject.src.mybaemin
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import com.example.softsquaredproject.R
 import com.example.softsquaredproject.config.ApplicationClass
 import com.example.softsquaredproject.config.ApplicationClass.Companion.sSharedPreferences
@@ -31,7 +32,14 @@ class MybaeminActivity : BaseActivity<ActivityMybaeminBinding>(ActivityMybaeminB
         val nickNm = sSharedPreferences.getString("nickNm",null)
 
         if(jwt != null){
-            binding.mybaeminText1.text = "귀하신 분 ${nickNm}"
+            binding.mybaeminText1.text = "귀하신 분,"
+            binding.mybaeminText0.text = "${nickNm}"
+            binding.mybaeminBanner.visibility = View.GONE
+            binding.mybaeminGrade.visibility = View.VISIBLE
+        }
+        else{
+            binding.mybaeminBanner.visibility = View.GONE
+
         }
     }
 

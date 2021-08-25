@@ -33,7 +33,7 @@ class FragmentMenu : BaseFragment<FragmentMenuBinding>(FragmentMenuBinding::bind
                         0 -> FragmentMenu2()
                         1 -> FragmentInformation()
                         2 -> FragmentReview()
-                        else -> FragmentReview()
+                        else -> FragmentMenu2()
                     }
                 }
             }

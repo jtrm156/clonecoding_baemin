@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/review_list_img1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_customer1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="15dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/review_list_txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="너굴"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/review_list_img1"
+            android:layout_marginTop="15dp"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_next"
+            app:layout_constraintStart_toEndOf="@id/review_list_txt1"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="15dp"/>
+
+        <LinearLayout
+            android:id="@+id/review_list_linear1"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            app:layout_constraintTop_toBottomOf="@id/review_list_txt1"
+            app:layout_constraintStart_toEndOf="@id/review_list_img1"
+            android:layout_marginTop="3dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/detail_star1"
+                android:layout_width="0dp"
+                android:layout_height="15dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_star" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/detail_star2"
+                android:layout_width="0dp"
+                android:layout_height="15dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_star" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/detail_star3"
+                android:layout_width="0dp"
+                android:layout_height="15dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_star" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/detail_star4"
+                android:layout_width="0dp"
+                android:layout_height="15dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_star" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/detail_star5"
+                android:layout_width="0dp"
+                android:layout_height="15dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_star" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오늘"
+            android:textColor="@color/blackForText"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@id/review_list_linear1"
+            app:layout_constraintTop_toBottomOf="@id/review_list_txt1"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="3dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/review_list_img2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baemin_category_icon1"
+            app:layout_constraintTop_toBottomOf="@id/review_list_img1"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/review_list_txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="굿~항상 맛있습니다."
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/review_list_img2"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/review_list_txt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="황금올리브 치킨"
+            android:textSize="13dp"
+            android:textColor="@color/black"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:background="@drawable/background_restaurant1"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/review_list_txt2"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/review_list_txt3"
+            android:weightSum="10"
+            android:layout_marginTop="10dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/review_list_img3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_ceo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_weight="0.5"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_restaurant1"
+                android:layout_weight="9.5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/review_list_img3">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/review_list_txt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사장님"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/review_list_txt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="오늘"
+                    android:textColor="@color/blackForText"
+                    android:textSize="11dp"
+                    app:layout_constraintStart_toEndOf="@id/review_list_txt4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="10dp"/>
+
+                 <androidx.appcompat.widget.AppCompatTextView
+                     android:id="@+id/review_list_txt6"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:textColor="@color/black"
+                     android:textSize="15dp"
+                     android:text="도도디님,"
+                     app:layout_constraintTop_toBottomOf="@id/review_list_txt4"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     android:layout_marginTop="10dp"
+                     android:layout_marginStart="10dp"
+                     android:layout_marginBottom="15dp"
+                     />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

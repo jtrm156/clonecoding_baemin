@@ -10,9 +10,7 @@ import com.example.softsquaredproject.config.ApplicationClass
 import com.example.softsquaredproject.config.ApplicationClass.Companion.sSharedPreferences
 import com.example.softsquaredproject.config.BaseFragment
 import com.example.softsquaredproject.databinding.FragmentMenu2Binding
-import com.example.softsquaredproject.src.detail_restaurant.models.DetailResponse
-import com.example.softsquaredproject.src.detail_restaurant.models.InfoResponse
-import com.example.softsquaredproject.src.detail_restaurant.models.MenuResponse
+import com.example.softsquaredproject.src.detail_restaurant.models.*
 import com.example.softsquaredproject.src.order.CustomAdapter2
 import com.example.softsquaredproject.src.order.RestaurantListActivity
 import com.example.softsquaredproject.src.order.restaurantList
@@ -99,6 +97,22 @@ class FragmentMenu2 : BaseFragment<FragmentMenu2Binding>(FragmentMenu2Binding::b
     }
 
     override fun onGet_menu_Failure(message: String) {
+
+    }
+
+    override fun onGet_review_info_Success(response: ReviewInfoResponse) {
+
+    }
+
+    override fun onGet_review_info_Failure(message: String) {
+
+    }
+
+    override fun onGet_review_list_Success(response: ReviewListResponse) {
+
+    }
+
+    override fun onGet_review_list_Failure(message: String) {
 
     }
 }
