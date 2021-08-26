@@ -71,10 +71,12 @@ class DeliveryFragment : BaseFragment<FragmentDeliveryBinding>(FragmentDeliveryB
         binding.homeFoodcategory.layoutManager = layout2
         binding.homeFoodcategory.setHasFixedSize(true)
 
-
         customAdapter.setItemClickListener(object : CustomAdapter.ItemClickListener{
             override fun onClick(view: View, position: Int) {
                 val item = FoodcategoryList[position]
+                val preferencesEditor: SharedPreferences.Editor = sSharedPreferences.edit()
+                preferencesEditor.putInt("Foodcategory", position)
+                preferencesEditor.apply()
             }
         })
         binding.homeViewpager.adapter = ViewPagerAdapter(getbannerlist())

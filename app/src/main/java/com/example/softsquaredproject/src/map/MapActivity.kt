@@ -21,6 +21,7 @@ import com.example.softsquaredproject.src.login.LoginService
 import com.example.softsquaredproject.src.login.models.PostLoginRequest
 import com.example.softsquaredproject.src.map.models.MapResponse
 import com.example.softsquaredproject.src.map.models2.MapResponse2
+import com.example.softsquaredproject.src.map.models3.SearchAddressResponse
 import java.net.URLDecoder
 
 class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate, TransitionMode.HORIZON),
@@ -211,7 +212,7 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
 
                     val address = "${a2} ${a3} ${n1}-${n2}"
                     binding.mapTxt2.text = "${a2} ${a3} ${n1} ${n2}"
-                    j = false
+                    j = true
                     val preferencesEditor: SharedPreferences.Editor = sSharedPreferences.edit()
                     preferencesEditor.putString("code", code)
                     preferencesEditor.putString("address", address)
@@ -238,5 +239,11 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
     }
 
     override fun onGettrans_adFailure(message: String) {
+    }
+
+    override fun onGet_search_ad_Success(response: SearchAddressResponse) {
+    }
+
+    override fun onGet_search_ad_Failure(message: String) {
     }
 }

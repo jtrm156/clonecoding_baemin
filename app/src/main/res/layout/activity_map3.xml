@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".src.search_address.SearchadActivity"
+    android:background="@color/baeminbackgroundColor">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="15dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="15dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="15dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="15dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchad_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/layout_background">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/home_bar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="배달받을 주소"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/map2_constraint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/gd_right"
+        app:layout_constraintBottom_toTopOf="@id/map2_constraint1"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background_map">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/icon_location2"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/map2_constraint1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background_layout2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/map2_constraint3"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/map2_txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/map2_txt3"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="용인시 기흥구 보정동 1215-4"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/map2_txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/background_map_view">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="도로명"
+                    android:textColor="@color/blackForText"
+                    android:textSize="13dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/map2_txt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/map2_txt2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="보정로114번길 41-4"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/map2_constraint3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/map2_constraint4"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/callbackground">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/map2_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="상세주소를 입력하세요(건물명,동/호수 등)"
+                android:textSize="15dp"
+                android:layout_marginStart="10dp"
+                android:textColorHint="@color/blackForText"
+                android:textCursorDrawable="@drawable/text_cursor"
+                android:background="@null"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/map2_constraint4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/viewbackground">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/map_txt4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="완료"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="17dp"
+                android:layout_marginBottom="15dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

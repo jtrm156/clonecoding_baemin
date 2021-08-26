@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.softsquaredproject.R
@@ -14,6 +15,7 @@ import com.example.softsquaredproject.databinding.ActivityDetailRestaurantListBi
 import com.example.softsquaredproject.src.basket.BasketActivity
 import com.example.softsquaredproject.src.detail_restaurant.models.*
 import com.example.softsquaredproject.src.map.Map2Activity
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayout
 
 
@@ -24,7 +26,7 @@ class DetailActivity : BaseActivity<ActivityDetailRestaurantListBinding>(Activit
         super.onCreate(savedInstanceState)
 
         val storeId = sSharedPreferences.getInt("storeId", 0)
-
+        progressON()
         DetailService(this).get_Detail_info_list(storeId)
         supportFragmentManager.beginTransaction().add(R.id.detail_pager, FragmentDeliveryOrder()).commit();
 
@@ -34,6 +36,21 @@ class DetailActivity : BaseActivity<ActivityDetailRestaurantListBinding>(Activit
         binding.detailBarBack.setOnClickListener(){
             finish()
         }
+
+        binding.afterScrollLayoutBack.setOnClickListener(){
+            finish()
+        }
+        binding.detailAppbar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
+            if(kotlin.math.abs(verticalOffset) - appBarLayout.totalScrollRange == 0) {
+                binding.toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
+                binding.detailSearch.visibility = View.VISIBLE
+                binding.afterScrollLayout.visibility = View.GONE
+            } else {
+                binding.toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.transparent))
+                binding.detailSearch.visibility = View.GONE
+                binding.afterScrollLayout.visibility = View.VISIBLE
+            }
+        })
 
         binding.detailTabLayout.addTab(binding.detailTabLayout.newTab().setText("배달주문"))
         binding.detailTabLayout.addTab(binding.detailTabLayout.newTab().setText("포장/방문주문"))
@@ -62,6 +79,7 @@ class DetailActivity : BaseActivity<ActivityDetailRestaurantListBinding>(Activit
     }
 
     override fun onGet_detail_info_Success(response: DetailResponse) {
+        progressOFF()
         if(response.isSuccess){
             val preferencesEditor: SharedPreferences.Editor = sSharedPreferences.edit()
             binding.detailTxt1.text = response.result.storeNm
@@ -74,7 +92,7 @@ class DetailActivity : BaseActivity<ActivityDetailRestaurantListBinding>(Activit
             }
             else{
                 val url_img = response.result.storeBannerUrl[0]
-                Glide.with(this).load(url_img).override(400, 400).into(binding.detailImg)
+                Glide.with(this).load(url_img).override(300,300).into(binding.detailImg)
             }
             binding.textView3.text = "${response.result.star}"
             binding.textView1.text = "최근리뷰 "+"${response.result.reviewCnt}"

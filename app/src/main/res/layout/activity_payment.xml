@@ -1,6 +1,493 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".src.search_address.SearchadActivity"
+    android:background="@color/baeminbackgroundColor">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="15dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="15dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="15dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="15dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchad_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/layout_background">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/basket_bar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="15dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/basket_txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="주문하기"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="15dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/searchad_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/insert_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/layout_background">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/payment_txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="배달정보"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/map2_txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/payment_txt1"
+                    android:text="용인시 기흥구 보정동 1215-4"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/map2_txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[도로명]"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/map2_txt1"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/map2_txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/map2_txt2"
+                    app:layout_constraintTop_toBottomOf="@id/map2_txt1"
+                    android:text="보정로114번길 41-4"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_marginStart="3dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8.5"
+                    android:background="@drawable/adress_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/map2_txt3"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/search_edt1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="상세주소를 입력하세요(건물명, 동/호수 등)"
+                        android:textSize="18dp"
+                        android:layout_marginStart="10dp"
+                        android:textColorHint="@color/blackForText"
+                        android:textCursorDrawable="@drawable/text_cursor"
+                        android:background="@null"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"/>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/payment_constraint2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/insert_address"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/layout_background">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/payment_txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="010-7179-1403"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="변경"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/background_restaurant5"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingBottom="3dp"/>
+
+                <CheckBox
+                    android:id="@+id/payment_check1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/payment_txt2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="15dp"
+                    android:buttonTint="@color/baemincolor"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/payment_txt3"
+                    app:layout_constraintStart_toEndOf="@id/payment_check1"
+                    app:layout_constraintTop_toBottomOf="@id/payment_txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="안심번호 사용"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/payment_txt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="자세히"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/background_restaurant5"
+                    app:layout_constraintStart_toEndOf="@id/payment_txt3"
+                    app:layout_constraintTop_toBottomOf="@id/payment_txt2"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="3dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/payment_constraint3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/payment_constraint2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/layout_background"
+                android:layout_marginTop="10dp"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/payment_constraint3_txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="요청사항"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/payment_constraint3_txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="가게 사장님께"
+                    android:textColor="@color/blackForText"
+                    android:textSize="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/payment_constraint3_txt1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <LinearLayout
+                    android:id="@+id/payment_constraint3_linear1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8.5"
+                    android:background="@drawable/adress_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/payment_constraint3_txt2"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="5dp">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/search_edt2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="예) 견과류 빼주세요, 덜 맵게 해주세요"
+                        android:textSize="15dp"
+                        android:layout_marginStart="10dp"
+                        android:textColorHint="@color/blackForText"
+                        android:textCursorDrawable="@drawable/text_cursor"
+                        android:background="@null"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"/>
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/payment_constraint3_check1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/payment_constraint3_linear1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:buttonTint="@color/baemincolor"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="다음에도 사용"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/payment_constraint3_linear1"
+                    app:layout_constraintStart_toEndOf="@id/payment_constraint3_check1"
+                    android:layout_marginTop="10dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/payment_constraint4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/payment_constraint3"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/layout_background">
+
+                <RadioGroup
+                    android:id="@+id/payment_constraint4_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp">
+
+                    <RadioButton
+                        android:id="@+id/basket_check1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/baemincolor"/>
+                    <RadioButton
+                        android:id="@+id/basket_check2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/baemincolor"
+                        android:layout_marginTop="5dp"/>
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/payment_constraint4_txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일회용 수저, 포크 안 주셔도 돼요."
+                    android:textColor="#548D40"
+                    android:textSize="18dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/payment_constraint4_radio"
+                    android:layout_marginTop="17dp"/>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_tree"
+                    app:layout_constraintStart_toEndOf="@id/payment_constraint4_txt1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="17dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/payment_constraint4_txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일회용 수저, 포크 넣어주세요."
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/payment_constraint4_txt1"
+                    app:layout_constraintStart_toEndOf="@id/payment_constraint4_radio"
+                    android:layout_marginTop="13dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/payment_constraint5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/payment_constraint4"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/layout_background">
+
+                <RadioGroup
+                    android:id="@+id/payment_constraint5_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp">
+
+                    <RadioButton
+                        android:id="@+id/basket_check1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/baemincolor"/>
+                    <RadioButton
+                        android:id="@+id/basket_check2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/baemincolor"
+                        android:layout_marginTop="5dp"/>
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/payment_constraint4_txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일회용 수저, 포크 안 주셔도 돼요."
+                    android:textColor="#548D40"
+                    android:textSize="18dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/payment_constraint4_radio"
+                    android:layout_marginTop="17dp"/>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_tree"
+                    app:layout_constraintStart_toEndOf="@id/payment_constraint4_txt1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="17dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/payment_constraint4_txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일회용 수저, 포크 넣어주세요."
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/payment_constraint4_txt1"
+                    app:layout_constraintStart_toEndOf="@id/payment_constraint4_radio"
+                    android:layout_marginTop="13dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/basket_constraint4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/gd_left"
+        app:layout_constraintEnd_toEndOf="@id/gd_right"
+        app:layout_constraintBottom_toBottomOf="@id/gd_bottom"
+        android:background="@drawable/viewbackground">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/basket_txt6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="19,000원 결제하기"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="15dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

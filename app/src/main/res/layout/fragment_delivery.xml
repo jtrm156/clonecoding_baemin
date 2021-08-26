@@ -105,11 +105,127 @@
                 android:layout_height="5dp"
                 android:background="@drawable/background_layout3">
             </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/start_scroll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/start_linear1"
+                android:background="@drawable/layout_background"
+                android:layout_marginTop="10dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/start_constraint_txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="오늘의 할인"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/review_constraint1_img1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_discount"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/start_constraint_txt1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/review_constraint1_txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전체보기"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/review_constraint1_img2"
+                    android:layout_marginTop="25dp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/review_constraint1_img2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_next"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="15dp"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/start_constraint_txt1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_dis_img1"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_dis_img2"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_dis_img3"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_dis_img4"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_dis_img5"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_dis_img6"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_dis_img7"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_dis_img8"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_dis_img9"/>
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="true"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:layout_marginTop="10dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"

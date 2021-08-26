@@ -30,6 +30,21 @@ class FragmentInformation : BaseFragment<FragmentInformationBinding>(FragmentInf
 
     override fun onGet_info_Success(response: InfoResponse) {
         if(response.isSuccess){
+            binding.infoConstraint2Txt1.text = response.result.bizNm
+            binding.infoConstraint2Txt2.text = "매일 - 오전 ${response.result.storeBizHour[0].startTime} ~ 오후 ${response.result.storeBizHour[0].closeTime}"
+            binding.infoConstraint2Txt3.text = response.result.holiday
+            binding.infoConstraint2Txt4.text = response.result.storePhoneNum
+            binding.infoConstraint2Txt6.text = response.result.deliveryLocation
+            binding.infoConstraint6Txt1.text = response.result.storeInfo
+            binding.infoConstraint3Txt1.text = response.result.orderCnt
+            binding.infoConstraint3Txt2.text = response.result.reviewCnt
+            binding.infoConstraint3Txt3.text = response.result.keepCnt.toString()
+            binding.infoBaedalTxt1.text = response.result.deliveryTip[0].orderPrice.toString()
+            binding.infoBaedalTxt2.text = response.result.deliveryTip[0].deliverTip.toString()
+            binding.infoConstraint5Txt1.text = response.result.ownerNm
+            binding.infoConstraint5Txt2.text = response.result.bizNm
+            binding.infoConstraint5Txt4.text = response.result.storeAddr
+            binding.infoConstraint5Txt6.text = response.result.bizNum
 
             val content = SpannableString(response.result.storePhoneNum)
             content.setSpan(UnderlineSpan(), 0, response.result.storePhoneNum.length, 0)

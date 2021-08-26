@@ -40,6 +40,7 @@
                     android:src="@drawable/baemin_category_icon1"
                     android:background="@drawable/background_restaurant3"
                     android:layout_gravity="center"
+                    android:adjustViewBounds="true"
                     android:scaleType="fitXY"/>
             </androidx.cardview.widget.CardView>
 
@@ -69,7 +70,7 @@
                     android:textStyle="bold"/>
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/restaurant_coupon"
+                    android:id="@+id/restaurant_coupon1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="포장"
@@ -82,8 +83,10 @@
                     android:paddingEnd="5dp"
                     android:paddingTop="3dp"
                     android:paddingBottom="3dp"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/restaurant_coupon2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매장"
@@ -96,8 +99,10 @@
                     android:paddingEnd="5dp"
                     android:paddingTop="3dp"
                     android:paddingBottom="3dp"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/restaurant_coupon3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="쿠폰"
@@ -110,7 +115,8 @@
                     android:paddingEnd="5dp"
                     android:paddingTop="3dp"
                     android:paddingBottom="3dp"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout

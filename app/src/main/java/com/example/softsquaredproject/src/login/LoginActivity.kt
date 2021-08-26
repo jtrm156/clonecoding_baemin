@@ -13,6 +13,8 @@ import com.example.softsquaredproject.databinding.ActivityLoginBinding
 import com.example.softsquaredproject.src.login.models.LoginResponse
 import com.example.softsquaredproject.src.login.models.PostLoginRequest
 import com.example.softsquaredproject.src.mybaemin.MybaeminActivity
+import com.example.softsquaredproject.src.mybaemin.MybaeminService
+import com.example.softsquaredproject.src.mybaemin.models.UserResponse
 import com.example.softsquaredproject.src.signup.SignupActivity
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
@@ -24,7 +26,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     override fun onCreate(savedInstanceState: Bundle?) {
         overridePendingTransition(R.anim.slide_in_right, R.anim.none)
         super.onCreate(savedInstanceState)
-
 
         binding.loginSignup.setOnClickListener(){
             startActivity(Intent(this, SignupActivity::class.java))
@@ -94,9 +95,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         if(response.isSuccess){
             startActivity(Intent(this, MybaeminActivity::class.java))
             showCustomToast("로그인되었습니다.")
+            LoginService(this).get_mypage()
             val preferencesEditor: SharedPreferences.Editor = ApplicationClass.sSharedPreferences.edit()
             preferencesEditor.putString("jwt", response.result.jwt)
             preferencesEditor.apply()
+            finish()
         }
         else if(response.isSuccess == false){
             binding.loginText3.visibility = View.VISIBLE
@@ -105,6 +108,18 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     }
 
     override fun onPostLoginFailure(message: String) {
+
+    }
+
+    override fun onGet_mypage_Success(response: UserResponse) {
+        if(response.isSuccess){
+            val preferencesEditor: SharedPreferences.Editor = ApplicationClass.sSharedPreferences.edit()
+            preferencesEditor.putString("user_nickNm", response.result.nickNm)
+            preferencesEditor.apply()
+        }
+    }
+
+    override fun onGet_mypage_Failure(message: String) {
 
     }
 

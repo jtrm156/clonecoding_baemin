@@ -67,7 +67,7 @@
         android:textCursorDrawable="@drawable/text_cursor"
         app:layout_constraintLeft_toRightOf="@id/gd_left"
         app:layout_constraintRight_toLeftOf="@id/gd_right"
-        app:layout_constraintBottom_toTopOf="@id/login_text3"
+        app:layout_constraintBottom_toTopOf="@id/login_edt_txt2"
         android:layout_marginBottom="30dp"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toRightOf="@id/gd_left"
-        app:layout_constraintBottom_toTopOf="@+id/login_edt_txt2"
+        app:layout_constraintTop_toBottomOf="@+id/login_edt_txt1"
         android:visibility="gone"
         android:text="이메일 아이디 또는 아이디를 입력해주세요."
         android:textColor="@color/redForText"/>
@@ -90,7 +90,7 @@
         android:textCursorDrawable="@drawable/text_cursor"
         app:layout_constraintLeft_toRightOf="@id/gd_left"
         app:layout_constraintRight_toLeftOf="@id/gd_right"
-        app:layout_constraintBottom_toTopOf="@id/login_text4"
+        app:layout_constraintBottom_toTopOf="@id/login_button"
         android:layout_marginBottom="30dp"
         />
 
@@ -101,7 +101,7 @@
         android:textColor="@color/redForText"
         android:visibility="gone"
         app:layout_constraintLeft_toRightOf="@id/gd_left"
-        app:layout_constraintBottom_toTopOf="@id/login_button"
+        app:layout_constraintTop_toBottomOf="@id/login_edt_txt2"
         android:text="비밀번호를 입력해주세요."/>
 
     <androidx.appcompat.widget.AppCompatButton

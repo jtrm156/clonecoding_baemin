@@ -51,7 +51,7 @@ class CustomAdapter4(private val context: Context, var ReviewArrayList: MutableL
             }
 
             binding.reviewListTxt6.text = reviewlist.commentCont
-            Glide.with(itemView).load(reviewlist.img).into(binding.reviewListImg2)
+            Glide.with(itemView).load(reviewlist.img).override(1000,1300).into(binding.reviewListImg2)
         }
 
     } //ViewHolder는 클래스 내에 View를 저장하는 변수를 만들어 그 안에 데이터를 직접 연결시킬 수 있는 클래스, 디자인 패턴

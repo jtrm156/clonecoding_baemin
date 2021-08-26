@@ -3,6 +3,7 @@ package com.example.softsquaredproject.src.map
 import com.example.softsquaredproject.config.ApplicationClass
 import com.example.softsquaredproject.src.map.models.MapResponse
 import com.example.softsquaredproject.src.map.models2.MapResponse2
+import com.example.softsquaredproject.src.map.models3.SearchAddressResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,6 +34,19 @@ class MapService(val view: MapActivityView) {
 
             override fun onFailure(call: Call<MapResponse2>, t: Throwable) {
                 view.onGettrans_adFailure(t.message ?: "통신 오류")
+            }
+        })
+    }
+
+    fun get_search_address_ad(pageIdx: Int, query: String){
+        val mapRetrofitInterface = ApplicationClass.sRetrofit.create(MapRetrofitInterface::class.java)
+        mapRetrofitInterface.get_search_address_ad(pageIdx, query).enqueue(object : Callback<SearchAddressResponse> {
+            override fun onResponse(call: Call<SearchAddressResponse>, response: Response<SearchAddressResponse>) {
+                view.onGet_search_ad_Success(response.body() as SearchAddressResponse)
+            }
+
+            override fun onFailure(call: Call<SearchAddressResponse>, t: Throwable) {
+                view.onGet_search_ad_Failure(t.message ?: "통신 오류")
             }
         })
     }

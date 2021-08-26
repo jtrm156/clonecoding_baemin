@@ -85,6 +85,7 @@
                         android:background="@drawable/adress_background">
 
                         <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/search_edt1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint=" 예) 배민동12-3 또는 배민 아파트"
@@ -97,6 +98,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/search_search_btn1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1.5"
@@ -177,10 +179,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"/>
+                    />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

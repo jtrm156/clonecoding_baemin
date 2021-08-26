@@ -471,6 +471,7 @@
                             android:layout_marginBottom="1dp">
 
                             <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/info_baedal_txt1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="18000원이상"
@@ -488,6 +489,7 @@
                             android:layout_marginBottom="1dp">
 
                             <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/info_baedal_txt2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="2,000원"

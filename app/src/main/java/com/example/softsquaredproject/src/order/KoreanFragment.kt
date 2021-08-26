@@ -25,7 +25,8 @@ data class restaurantList(val restaurant_img : String,
                           val restaurant_menu : String,
                           val restaurant_delivertime : String,
                           val restaurant_orderprice : Int,
-                          val restaurant_delivertip : Int
+                          val restaurant_delivertip : Int,
+                          val coupon : Int
                           )
 
 class KoreanFragment: BaseFragment<ActivityKoreanBinding>(ActivityKoreanBinding::bind, R.layout.activity_korean), RestaurantListView {
@@ -55,7 +56,7 @@ class KoreanFragment: BaseFragment<ActivityKoreanBinding>(ActivityKoreanBinding:
                 restaurantList(
                     "${url_img}",
                     "${name}", "${star}", "(${Cnt})", "${menu}", "${time}",
-                    price, tip
+                    price, tip, i
                 )
             )
         }

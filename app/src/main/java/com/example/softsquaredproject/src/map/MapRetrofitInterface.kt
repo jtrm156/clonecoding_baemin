@@ -2,6 +2,7 @@ package com.example.softsquaredproject.src.map
 
 import com.example.softsquaredproject.src.map.models.MapResponse
 import com.example.softsquaredproject.src.map.models2.MapResponse2
+import com.example.softsquaredproject.src.map.models3.SearchAddressResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -22,4 +23,10 @@ interface MapRetrofitInterface {
     fun gettrans_ad(
         @Query("query") query: String
     ) : Call<MapResponse2>
+
+    @GET("/app/address")
+    fun get_search_address_ad(
+        @Query("pageIdx") pageIdx: Int,
+        @Query("query") query: String
+    ) : Call<SearchAddressResponse>
 }

@@ -16,4 +16,5 @@
     <color name="redForText">#BF6364</color>
     <color name="baemincolor">#2AC1BC</color>
     <color name="baeminbackgroundColor">#F6F6F6</color>
+    <color name="transparent">#00000000</color>
 </resources>

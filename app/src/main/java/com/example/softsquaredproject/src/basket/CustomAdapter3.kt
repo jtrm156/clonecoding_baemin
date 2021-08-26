@@ -16,6 +16,7 @@ class CustomAdapter3(private val context: Context, var basketArrayList: MutableL
     RecyclerView.Adapter<CustomAdapter3.ItemViewHolder>() {
     //Layout들과 RecyclerView를 연결시킬 Adapter(데이터를 받아오고 이를 레이아웃에 직접 연결하는 함수를 실행시키는 클래스)
 
+
     interface ItemClickListener {
         fun onClick(view: View, position: Int)
     }
@@ -25,14 +26,28 @@ class CustomAdapter3(private val context: Context, var basketArrayList: MutableL
         this.itemClickListener = itemClickListener
     }
 
+    fun addItem(basketlist: basketlist){
+        basketArrayList.add(basketlist)
+        notifyDataSetChanged()
+    }
+
     inner class ItemViewHolder(private val binding: ShoppingBasketListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(basketlist: basketlist, num: Int, context: Context) {
 
             binding.basketListTxt1.text = basketlist.menu
-            binding.basketListTxt2.text = basketlist.price
-        }
+            binding.basketListTxt2.text = "·  가격: ${basketlist.price}원"
+            binding.basketListTxt3.text = basketlist.price
 
+            binding.basketListImg1.setOnClickListener(){
+                val price = basketlist.price.toInt() - basketlist.price.toInt()
+            }
+            binding.basketListImg2.setOnClickListener(){
+                val price = basketlist.price.toInt() + basketlist.price.toInt()
+
+                binding.basketListTxt3.text = "${price}"
+            }
+        }
     } //ViewHolder는 클래스 내에 View를 저장하는 변수를 만들어 그 안에 데이터를 직접 연결시킬 수 있는 클래스, 디자인 패턴
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
