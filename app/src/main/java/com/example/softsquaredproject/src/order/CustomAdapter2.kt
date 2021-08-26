@@ -8,9 +8,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.Target.SIZE_ORIGINAL
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.softsquaredproject.R
-import com.example.softsquaredproject.config.ApplicationClass.Companion.sSharedPreferences
 import com.example.softsquaredproject.databinding.RestaurantListItemBinding
 import com.example.softsquaredproject.src.detail_restaurant.DetailActivity
 import com.example.softsquaredproject.src.home.Foodcategory
@@ -43,7 +42,8 @@ class CustomAdapter2(private val context: Context, var RestaurantArrayList: Muta
 
             //binding.restaurantImage.setImageResource(resourceId)
 
-            Glide.with(itemView).load(restaurantlist.restaurant_img).error(R.drawable.baemin_category_icon6).into(binding.restaurantImage)
+            Glide.with(itemView).load(restaurantlist.restaurant_img).error(R.drawable.baemin_category_icon6).diskCacheStrategy(
+                DiskCacheStrategy.RESOURCE).fitCenter().into(binding.restaurantImage)
             binding.restaurantName.text = restaurantlist.restaurant_name
             binding.restaurantStar.text = restaurantlist.restaurant_star
             binding.restaurantReviewCnt.text = restaurantlist.restaurant_reviewCnt

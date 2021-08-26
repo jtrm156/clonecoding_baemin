@@ -37,7 +37,7 @@ class CustomAdapter3(private val context: Context, var basketArrayList: MutableL
 
             binding.basketListTxt1.text = basketlist.menu
             binding.basketListTxt2.text = "·  가격: ${basketlist.price}원"
-            binding.basketListTxt3.text = basketlist.price
+            binding.basketListTxt3.text = "${basketlist.price}원"
 
             binding.basketListImg1.setOnClickListener(){
                 val price = basketlist.price.toInt() - basketlist.price.toInt()
@@ -45,7 +45,7 @@ class CustomAdapter3(private val context: Context, var basketArrayList: MutableL
             binding.basketListImg2.setOnClickListener(){
                 val price = basketlist.price.toInt() + basketlist.price.toInt()
 
-                binding.basketListTxt3.text = "${price}"
+                binding.basketListTxt3.text = "${price}원"
             }
         }
     } //ViewHolder는 클래스 내에 View를 저장하는 변수를 만들어 그 안에 데이터를 직접 연결시킬 수 있는 클래스, 디자인 패턴

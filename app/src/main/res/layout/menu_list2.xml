@@ -45,9 +45,31 @@
             android:background="@drawable/background_restaurant1"
             android:text="대표"
             android:textSize="12dp"
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
             android:textColor="@color/black"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menu_list_txt5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/menu_list_txt3"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/background_restaurant4"
+            android:text="인기"
+            android:textSize="12dp"
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:textColor="@color/white"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/menu_list_img1"
             android:layout_width="100dp"

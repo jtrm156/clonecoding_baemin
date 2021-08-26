@@ -54,7 +54,7 @@ class FragmentInformation : BaseFragment<FragmentInformationBinding>(FragmentInf
                 binding.infoConstraint1.visibility = View.GONE
             }
             else if(response.result.storeIntroImg.size > 0){
-                Glide.with(this).load( response.result.storeIntroImg[0].storeImgUrl).into(binding.infoImg1)
+                Glide.with(this).load(response.result.storeIntroImg[0].storeImgUrl).into(binding.infoImg1)
             }
 
             if("${response.result.storeIntro}" == "null"){

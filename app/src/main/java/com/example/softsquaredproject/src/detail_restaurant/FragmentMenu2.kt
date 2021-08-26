@@ -22,7 +22,7 @@ data class menuList(val menuGrpNm : String,
                     val isSoldOut : String,
                     val isHot : String,
                     val menu_url_img : String,
-                    val group : String)
+                    val group : Int)
 
 class FragmentMenu2 : BaseFragment<FragmentMenu2Binding>(FragmentMenu2Binding::bind, R.layout.fragment_menu2), DetailView {
 
@@ -35,32 +35,36 @@ class FragmentMenu2 : BaseFragment<FragmentMenu2Binding>(FragmentMenu2Binding::b
 
         DetailService(this).get_menu_list(storeId)
 
-        MenuList.add(menuList("대표메뉴","교촌발사믹치킨",19000, "N", "Y","Y","http://www.consumernews.co.kr/news/photo/202107/630060_224158_4140.jpg","groupInfo"))
-        MenuList.add(menuList("대표메뉴","교촌발사믹치킨",19000, "N", "Y","Y","http://www.consumernews.co.kr/news/photo/202107/630060_224158_4140.jpg","groupmenuInfo"))
-        MenuList.add(menuList("신메뉴","교촌발사믹치킨",19000, "N", "Y","Y","http://www.consumernews.co.kr/news/photo/202107/630060_224158_4140.jpg","groupInfo"))
-        MenuList.add(menuList("대표메뉴","교촌발사믹치킨",19000, "N", "Y","Y","http://www.consumernews.co.kr/news/photo/202107/630060_224158_4140.jpg","groupmenuInfo"))
-        MenuList.add(menuList("교촌시리즈","교촌콤보",17000, "Y", "Y","Y","http://www.kyochon.com/uploadFiles/TB_ITEM/%EB%B8%8C%EB%9E%9C%EB%93%9C_list_15-10-231103.png","groupInfo"))
-        MenuList.add(menuList("레드시리즈","교촌레드콤보",18000, "N", "Y","Y","http://www.kyochon.com/uploadFiles/TB_ITEM/%EB%B8%8C%EB%9E%9C%EB%93%9C_list_15-10-231098.png","groupInfo"))
-        MenuList.add(menuList("허니시리즈","교촌허니콤보",19900, "Y", "Y","Y","http://www.kyochon.com/uploadFiles/TB_ITEM/%EB%B8%8C%EB%9E%9C%EB%93%9C_list_%ED%97%88%EB%8B%88%EC%88%9C%EC%82%B4R(0).png","groupInfo"))
-        MenuList.add(menuList("사이드메뉴","교촌웨지감자",5000, "N", "Y","Y","http://www.kyochon.com/uploadFiles/TB_ITEM/%EC%9B%A8%EC%A7%80%EA%B0%90%EC%9E%90_%EB%A6%AC%EC%8A%A4%ED%8A%B8.png","groupInfo"))
-
+        /*
+        MenuList.add(menuList("대표메뉴","교촌발사믹치킨",19000, "N", "Y","Y","http://www.consumernews.co.kr/news/photo/202107/630060_224158_4140.jpg",0))
+        MenuList.add(menuList("대표메뉴","교촌발사믹치킨",19000, "N", "Y","Y","http://www.consumernews.co.kr/news/photo/202107/630060_224158_4140.jpg",1))
+        MenuList.add(menuList("신메뉴","교촌발사믹치킨",19000, "N", "Y","Y","http://www.consumernews.co.kr/news/photo/202107/630060_224158_4140.jpg",0))
+        MenuList.add(menuList("대표메뉴","교촌발사믹치킨",19000, "N", "Y","Y","http://www.consumernews.co.kr/news/photo/202107/630060_224158_4140.jpg",1))
+        MenuList.add(menuList("교촌시리즈","교촌콤보",17000, "Y", "Y","Y","http://www.kyochon.com/uploadFiles/TB_ITEM/%EB%B8%8C%EB%9E%9C%EB%93%9C_list_15-10-231103.png",0))
+        MenuList.add(menuList("레드시리즈","교촌레드콤보",18000, "N", "Y","Y","http://www.kyochon.com/uploadFiles/TB_ITEM/%EB%B8%8C%EB%9E%9C%EB%93%9C_list_15-10-231098.png",0))
+        MenuList.add(menuList("허니시리즈","교촌허니콤보",19900, "Y", "Y","Y","http://www.kyochon.com/uploadFiles/TB_ITEM/%EB%B8%8C%EB%9E%9C%EB%93%9C_list_%ED%97%88%EB%8B%88%EC%88%9C%EC%82%B4R(0).png",0))
+        MenuList.add(menuList("사이드메뉴","교촌웨지감자",5000, "N", "Y","Y","http://www.kyochon.com/uploadFiles/TB_ITEM/%EC%9B%A8%EC%A7%80%EA%B0%90%EC%9E%90_%EB%A6%AC%EC%8A%A4%ED%8A%B8.png",0))
+        */
         val index = sSharedPreferences.getInt("gsize1",0)
         val index2 = sSharedPreferences.getInt("gsize2",0)
 
         for(i in 0 .. index-1){
 
-            for(j in 0 ..index2-1) {
-                /*
-                preferencesEditor.putString("menu_url_img${i}${j}", menu_url_img)
-                preferencesEditor.putString("menuNm${i}${j}", menuNm)
-                preferencesEditor.putString("isReprsnMenu${i}${j}", isReprsnMenu)
-                preferencesEditor.putString("isSoldOut${i}${j}", isSoldOut)
-                preferencesEditor.putString("isHot${i}${j}", isHot)
-                preferencesEditor.apply()
+            val menuGrpNm = sSharedPreferences.getString("menuGrpNm${i}",null)
 
+                MenuList.add(menuList("${menuGrpNm}","", 0, "","","","",0))
+
+            for(j in 0 ..index2-1) {
+                val preferencesEditor: SharedPreferences.Editor = sSharedPreferences.edit()
                 val menu_url_img = sSharedPreferences.getString("menu_url_img${i}${j}",null)
-                MenuList.add(menuList("","", "", "","","","menu_url_img"))
-                */
+                val menuNm = sSharedPreferences.getString("menuNm${i}${j}",null)
+                val menuGrpNm = sSharedPreferences.getString("menuGrpNm${i}",null)
+                val price = sSharedPreferences.getInt("price${i}${j}", 0)
+                val isReprsnMenu = sSharedPreferences.getString("isReprsnMenu${i}${j}", null)
+                val isSoldOut = sSharedPreferences.getString("isSoldOut${i}${j}", null)
+                val isHot = sSharedPreferences.getString("isHot${i}${j}", null)
+
+                MenuList.add(menuList("${menuGrpNm}","${menuNm}", price, "${isReprsnMenu}","${isSoldOut}","${isHot}","${menu_url_img}",1))
             }
         }
 
@@ -113,7 +117,7 @@ class FragmentMenu2 : BaseFragment<FragmentMenu2Binding>(FragmentMenu2Binding::b
                 val index2 = response.result.groupMenuInfo[i].menuInfo.size
                 val groupInfo = response.result.groupInfo.toString()
                 preferencesEditor.putString("groupInfo${i}}", groupInfo)
-                preferencesEditor.putInt("gsize1", index2)
+                preferencesEditor.putInt("gsize2", index2)
                 preferencesEditor.putString("menuGrpNm${i}", menuGrpNm)
                 preferencesEditor.apply()
 
@@ -132,7 +136,6 @@ class FragmentMenu2 : BaseFragment<FragmentMenu2Binding>(FragmentMenu2Binding::b
                     preferencesEditor.putString("isSoldOut${i}${j}", isSoldOut)
                     preferencesEditor.putString("isHot${i}${j}", isHot)
                     preferencesEditor.apply()
-
                 }
             }
         }

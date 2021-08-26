@@ -1,7 +1,9 @@
 package com.example.softsquaredproject.src.basket
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.softsquaredproject.R
 import com.example.softsquaredproject.config.ApplicationClass.Companion.sSharedPreferences
@@ -22,6 +24,8 @@ class BasketActivity : BaseActivity<ActivityShoppingBasketBinding>(ActivityShopp
         overridePendingTransition(R.anim.slide_in_right, R.anim.none)
         super.onCreate(savedInstanceState)
 
+        binding.basketCheck1.isChecked = true
+
         binding.basketBarBack.setOnClickListener(){
             onBackPressed()
         }
@@ -34,6 +38,12 @@ class BasketActivity : BaseActivity<ActivityShoppingBasketBinding>(ActivityShopp
         val layout2 = LinearLayoutManager(this)
         binding.basketRecyclerview.layoutManager = layout2
         binding.basketRecyclerview.setHasFixedSize(true)
+
+        customAdapter.setItemClickListener(object : CustomAdapter3.ItemClickListener{
+            override fun onClick(view: View, position: Int) {
+                val item = basketList[position]
+            }
+        })
 
         customAdapter.addItem(basketlist("${sSharedPreferences.getString("item_menuNm",null)}","${sSharedPreferences.getInt("item_price", 0)}"))
         customAdapter.notifyDataSetChanged()

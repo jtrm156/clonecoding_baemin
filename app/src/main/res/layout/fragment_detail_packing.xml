@@ -106,7 +106,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="경기도 용인시 기흥구 보정동 1197-2 풍산프라자 1층 106호(배달주소로부터 약 653m)"
+                    android:text="서울특별시 송파구 풍납동 393 101호(풍납동)"
                     android:textSize="15dp"
                     android:textColor="@color/black"/>
                 <androidx.appcompat.widget.AppCompatImageView

@@ -117,18 +117,19 @@
                             android:id="@+id/basket_check1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:buttonTint="@color/baemincolor"/>
+                            android:checked="true"
+                            android:buttonTint="@color/baemincolor"
+                            />
                         <RadioButton
                             android:id="@+id/basket_check2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:buttonTint="@color/baemincolor"
-                            android:layout_marginTop="15dp"/>
+                            android:layout_marginTop="15dp"
+                            />
                         <RadioButton
                             android:id="@+id/basket_check3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:buttonTint="@color/baemincolor"
                             android:layout_marginTop="15dp"/>
                     </RadioGroup>
 
@@ -184,6 +185,16 @@
                                 app:layout_constraintStart_toStartOf="parent"
                                 />
 
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3000원 할인"
+                                android:textSize="12dp"
+                                android:textColor="#FF8400"
+                                app:layout_constraintStart_toEndOf="@id/basket_txt4"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="2dp"/>
                             <androidx.appcompat.widget.AppCompatTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
