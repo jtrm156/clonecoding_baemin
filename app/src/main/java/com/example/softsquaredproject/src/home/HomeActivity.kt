@@ -16,6 +16,7 @@ import com.example.softsquaredproject.config.BaseActivity
 import com.example.softsquaredproject.databinding.ActivityHomeBinding
 import com.example.softsquaredproject.src.mybaemin.MybaeminActivity
 import com.example.softsquaredproject.src.order.OrderFragment
+import com.example.softsquaredproject.src.orderlist.OrderList
 import com.example.softsquaredproject.src.search_address.SearchadActivity
 import com.example.softsquaredproject.src.start.StartActivity
 
@@ -48,7 +49,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(ActivityHomeBinding::infl
             onBackPressed()
         }
         binding.btmNavOrderList.setOnClickListener(){
-            startActivity(Intent(this, StartActivity::class.java))
+            startActivity(Intent(this, OrderList::class.java))
         }
         binding.btmNavMyBaemin.setOnClickListener(){
             startActivity(Intent(this, MybaeminActivity::class.java))
@@ -57,7 +58,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(ActivityHomeBinding::infl
         supportFragmentManager.beginTransaction()
             .replace(R.id.home_fragment, HomeFragment())
             .commitAllowingStateLoss()
-
     }
     override fun finish(){
         super.finish()

@@ -11,8 +11,10 @@ import com.example.softsquaredproject.config.BaseActivity
 import com.example.softsquaredproject.databinding.ActivityShoppingBasketBinding
 import com.example.softsquaredproject.src.detail_restaurant.DetailActivity
 import com.example.softsquaredproject.src.home.Foodcategory
+import com.example.softsquaredproject.src.home.HomeFragment
 import com.example.softsquaredproject.src.order.CustomAdapter2
 import com.example.softsquaredproject.src.order.RestaurantListActivity
+import com.example.softsquaredproject.src.orderlist.OrderListFragment
 import com.example.softsquaredproject.src.payment.PaymentActivity
 
 data class basketlist(val menu : String, val price : String)
@@ -57,6 +59,10 @@ class BasketActivity : BaseActivity<ActivityShoppingBasketBinding>(ActivityShopp
         binding.basketConstraint3.setOnClickListener(){
             startActivity(Intent(this, DetailActivity::class.java))
         }
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.order_list_fragment, OrderListFragment())
+            .commitAllowingStateLoss()
     }
 
     override fun finish(){
